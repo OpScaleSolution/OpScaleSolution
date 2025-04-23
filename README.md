@@ -34,7 +34,7 @@ If you are interested in partnering with us or learning more about our services,
 
 ## Contact
 
-* **Email:** solutions@opsacale.ir
+* **Email:** solutions@opscale.ir
 * **Website:** WIP
 * **LinkedIn:** WIP
 * **Twitter:** WIP
