@@ -1,4 +1,4 @@
-# OpScale Solution
+# OpScale Solutions
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CNCF Member](https://img.shields.io/badge/CNCF-Member-blueviolet.svg)](https://www.cncf.io/)
@@ -6,7 +6,7 @@
 
 **Building Scalable SaaS Solutions with Cloud-Native Expertise.**
 
-At OpScale Solution, we are dedicated to architecting, developing, and deploying highly scalable and resilient Software-as-a-Service (SaaS) solutions. Leveraging our deep expertise in cloud-native technologies, particularly Kubernetes, we empower businesses to achieve agility, efficiency, and growth.
+At OpScale Solutions, we are dedicated to architecting, developing, and deploying highly scalable and resilient Software-as-a-Service (SaaS) solutions. Leveraging our deep expertise in cloud-native technologies, particularly Kubernetes, we empower businesses to achieve agility, efficiency, and growth.
 
 ## Our Focus
 
