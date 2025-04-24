@@ -1,5 +1,3 @@
-# OpScale Solutions
-
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CNCF Member](https://img.shields.io/badge/CNCF-Member-blueviolet.svg)](https://www.cncf.io/)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Certified%20Experts-blue.svg)](https://www.cncf.io/certification/)
