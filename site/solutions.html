@@ -1,228 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <title>OpScale Solutions - راهکارهای مدیریت‌شده کوبرنیت On-Premise</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اینفوگرافیک: خدمات مدیریت‌شده کوبرنیت On-Premise در ایران</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-height: 60vh;
+            }
+        }
+        .flowchart-step {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flowchart-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba{0, 0, 0, 0.04};
+        }
+        .flowchart-arrow {
+            color: #7CB5D2;
+        }
+        .tech-stack-layer {
+            border-bottom: 4px solid #003F5C;
+        }
+    </style>
 </head>
-<body class="landing">
-    <div id="page-wrapper">
+<body class="bg-[#C1E2F7] text-[#003F5C]">
 
-        <!-- Header (copied from index.html) -->
-        <header id="header">
-            <h1 id="logo"><a href="index.html">OpScale Solutions</a></h1>
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="solutions.html">Solutions</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header class="bg-[#003F5C] text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">مدرن‌سازی زیرساخت IT در ایران: چالش‌ها و راه‌حل‌ها</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-[#C1E2F7]">ارائه خدمات مدیریت‌شده کوبرنیت On-Premise با تکیه بر تخصص بومی و فناوری‌های Open Source</p>
+    </header>
 
-        <!-- Main Content -->
-        <main>
-            <!-- Banner/Title Section -->
-            <section id="banner" class="style1 special">
-                <div class="content">
-                    <header>
-                        <h2>مدرن‌سازی زیرساخت IT در ایران: چالش‌ها و راه‌حل‌ها</h2>
-                        <p>ارائه خدمات مدیریت‌شده کوبرنیت On-Premise با تکیه بر تخصص بومی و فناوری‌های Open Source</p>
-                    </header>
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="market-drivers" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12">چرا سازمان‌های ایرانی به راه‌حل‌های On-Premise نیاز دارند؟</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white/70 backdrop-blur-sm rounded-lg shadow-lg p-8">
+                    <div class="text-6xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-2 text-[#366E8A]">امنیت و کنترل کامل</h3>
+                    <p class="text-base">حفظ داده‌های حساس در دیتاسنترهای داخلی و انطباق کامل با الزامات قانونی و رگولاتوری کشور.</p>
                 </div>
-            </section>
-
-            <section id="market-drivers" class="wrapper style2">
-                <div class="inner">
-                    <header class="major">
-                        <h2>چرا سازمان‌های ایرانی به راه‌حل‌های On-Premise نیاز دارند؟</h2>
-                    </header>
-                    <div class="features">
-                        <section>
-                            <span class="icon major"><span style="font-size:2em;">🛡️</span></span>
-                            <h3>امنیت و کنترل کامل</h3>
-                            <p>حفظ داده‌های حساس در دیتاسنترهای داخلی و انطباق کامل با الزامات قانونی و رگولاتوری کشور.</p>
-                        </section>
-                        <section>
-                            <span class="icon major"><span style="font-size:2em;">🔒</span></span>
-                            <h3>کاهش ریسک تحریم</h3>
-                            <p>عدم وابستگی به سرویس‌دهندگان خارجی و مصونیت در برابر قطع خدمات به دلیل تحریم‌های بین‌المللی.</p>
-                        </section>
-                        <section>
-                            <span class="icon major"><span style="font-size:2em;">⚙️</span></span>
-                            <h3>انعطاف‌پذیری زیرساخت</h3>
-                            <p>امکان سفارشی‌سازی کامل زیرساخت بر اساس نیازهای منحصربه‌فرد هر سازمان و استفاده بهینه از سخت‌افزارهای موجود.</p>
-                        </section>
-                    </div>
+                <div class="bg-white/70 backdrop-blur-sm rounded-lg shadow-lg p-8">
+                    <div class="text-6xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold mb-2 text-[#366E8A]">کاهش ریسک تحریم</h3>
+                    <p class="text-base">عدم وابستگی به سرویس‌دهندگان خارجی و مصونیت در برابر قطع خدمات به دلیل تحریم‌های بین‌المللی.</p>
                 </div>
-            </section>
-
-            <section id="our-solution" class="wrapper style2">
-                <div class="inner">
-                    <header class="major">
-                        <h2>راهکار جامع ما: از مشاوره تا مدیریت کامل</h2>
-                    </header>
-                    <p class="text-center max-w-3xl mx-auto mb-16 text-lg text-[#366E8A]">ما با ارائه یک راهکار سرتاسری مبتنی بر ابزارهای Open Source، شما را در مسیر مدرن‌سازی زیرساخت و پیاده‌سازی فرهنگ DevOps همراهی می‌کنیم.</p>
-                    <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8 md:space-x-reverse">
-                        <div class="flowchart-step text-center bg-[#C1E2F7] p-6 rounded-lg shadow-md w-64">
-                            <h3 class="text-xl font-bold">۱. مشاوره و طراحی</h3>
-                            <p class="text-sm mt-2">تحلیل نیاز و طراحی معماری بهینه</p>
-                        </div>
-                        <div class="flowchart-arrow text-4xl font-bold transform md:-rotate-0 -rotate-90">➔</div>
-                        <div class="flowchart-step text-center bg-[#7CB5D2] p-6 rounded-lg shadow-md w-64">
-                            <h3 class="text-xl font-bold text-white">۲. پیاده‌سازی و راه‌اندازی</h3>
-                            <p class="text-sm mt-2 text-white/90">نصب و پیکربندی کامل پشته فناوری</p>
-                        </div>
-                        <div class="flowchart-arrow text-4xl font-bold transform md:-rotate-0 -rotate-90">➔</div>
-                        <div class="flowchart-step text-center bg-[#366E8A] text-white p-6 rounded-lg shadow-md w-64">
-                            <h3 class="text-xl font-bold">۳. مدیریت و پشتیبانی</h3>
-                            <p class="text-sm mt-2">نگهداری، مانیتورینگ و بهینه‌سازی مستمر</p>
-                        </div>
-                    </div>
+                <div class="bg-white/70 backdrop-blur-sm rounded-lg shadow-lg p-8">
+                    <div class="text-6xl mb-4">⚙️</div>
+                    <h3 class="text-2xl font-bold mb-2 text-[#366E8A]">انعطاف‌پذیری زیرساخت</h3>
+                    <p class="text-base">امکان سفارشی‌سازی کامل زیرساخت بر اساس نیازهای منحصربه‌فرد هر سازمان و استفاده بهینه از سخت‌افزارهای موجود.</p>
                 </div>
-            </section>
-
-            <section id="tech-stack" class="wrapper style2">
-                <div class="inner">
-                    <header class="major">
-                        <h2>پشته فناوری ما: قدرت Open Source</h2>
-                    </header>
-                    <div class="max-w-2xl mx-auto bg-white/70 backdrop-blur-sm rounded-lg shadow-lg p-8">
-                        <div class="tech-stack-layer text-center p-4">
-                            <h3 class="text-xl font-bold text-[#366E8A]">GitLab & ArgoCD</h3>
-                            <p>اتوماسیون کامل فرآیندهای CI/CD و پیاده‌سازی GitOps</p>
-                        </div>
-                        <div class="tech-stack-layer text-center p-4">
-                            <h3 class="text-xl font-bold text-[#366E8A]">Prometheus, Grafana, Loki</h3>
-                            <p>مانیتورینگ، تحلیل و مشاهده‌پذیری (Observability) جامع</p>
-                        </div>
-                        <div class="tech-stack-layer text-center p-4">
-                            <h3 class="text-xl font-bold text-[#366E8A]">Kubernetes (CKA/CKAD/CKS)</h3>
-                            <p>ارکستراسیون کانتینرها با تکیه بر تخصص تایید شده</p>
-                        </div>
-                        <div class="text-center p-4 bg-[#003F5C] rounded-b-lg">
-                            <h3 class="text-xl font-bold text-white">GNU/Linux</h3>
-                            <p class="text-white/90">بنیان استوار و امن زیرساخت شما</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-                <section id="target-market">
-                    <div class="bg-white rounded-lg shadow-xl p-8 h-full">
-                        <h2 class="text-3xl font-bold text-center mb-4 text-[#003F5C]">ما به چه سازمان‌هایی کمک می‌کنیم؟</h2>
-                        <p class="text-center text-[#366E8A] mb-8">Solutionsی ما برای سازمان‌هایی طراحی شده که امنیت، پایداری و کنترل کامل بر زیرساخت برایشان در اولویت است.</p>
-                        <div class="chart-container">
-                            <canvas id="targetMarketChart"></canvas>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="value-proposition">
-                    <div class="bg-white rounded-lg shadow-xl p-8 h-full">
-                        <h2 class="text-3xl font-bold text-center mb-4 text-[#003F5C]">ارزش پیشنهادی ما</h2>
-                        <p class="text-center text-[#366E8A] mb-8">ما با ترکیب تخصص فنی و ابزارهای قدرتمند، مزایای ملموسی برای کسب‌وکار شما ایجاد می‌کنیم.</p>
-                        <div class="chart-container">
-                            <canvas id="valuePropositionChart"></canvas>
-                        </div>
-                    </div>
-                </section>
             </div>
+        </section>
 
-            <section id="packages" class="mb-20">
-                <h2 class="text-3xl font-bold text-center mb-12">پکیج‌های خدماتی متناسب با نیاز شما</h2>
-                <div class="overflow-x-auto">
-                    <table class="w-full min-w-[600px] text-center bg-white rounded-lg shadow-lg">
-                        <thead class="bg-[#366E8A] text-white">
-                            <tr>
-                                <th class="p-4 font-bold">ویژگی</th>
-                                <th class="p-4 font-bold">پشتیبانی پایه</th>
-                                <th class="p-4 font-bold">مدیریت استاندارد</th>
-                                <th class="p-4 font-bold">سازمانی اختصاصی</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b border-[#C1E2F7]">
-                                <td class="p-4 font-bold text-right">مشاوره و طراحی</td>
-                                <td class="p-4">✅</td>
-                                <td class="p-4">✅</td>
-                                <td class="p-4">✅</td>
-                            </tr>
-                            <tr class="border-b border-[#C1E2F7] bg-blue-50">
-                                <td class="p-4 font-bold text-right">پیاده‌سازی کامل پشته</td>
-                                <td class="p-4">✅</td>
-                                <td class="p-4">✅</td>
-                                <td class="p-4">✅</td>
-                            </tr>
-                            <tr class="border-b border-[#C1E2F7]">
-                                <td class="p-4 font-bold text-right">پشتیبانی (SLA)</td>
-                                <td class="p-4">۸x۵</td>
-                                <td class="p-4">۲۴x۷</td>
-                                <td class="p-4">اختصاصی</td>
-                            </tr>
-                            <tr class="border-b border-[#C1E2F7] bg-blue-50">
-                                <td class="p-4 font-bold text-right">مانیتورینگ جامع</td>
-                                <td class="p-4">پایه</td>
-                                <td class="p-4">پیشرفته</td>
-                                <td class="p-4">جامع</td>
-                            </tr>
-                            <tr class="border-b border-[#C1E2F7]">
-                                <td class="p-4 font-bold text-right">مدیریت CI/CD و GitOps</td>
-                                <td class="p-4">❌</td>
-                                <td class="p-4">✅</td>
-                                <td class="p-4">✅</td>
-                            </tr>
-                             <tr class="bg-blue-50">
-                                <td class="p-4 font-bold text-right">مدیر حساب اختصاصی</td>
-                                <td class="p-4">❌</td>
-                                <td class="p-4">❌</td>
-                                <td class="p-4">✅</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <section id="our-solution" class="mb-20 bg-white rounded-lg shadow-xl p-8 md:p-12">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#003F5C]">راهکار جامع ما: از مشاوره تا مدیریت کامل</h2>
+            <p class="text-center max-w-3xl mx-auto mb-16 text-lg text-[#366E8A]">ما با ارائه یک راهکار سرتاسری مبتنی بر ابزارهای Open Source، شما را در مسیر مدرن‌سازی زیرساخت و پیاده‌سازی فرهنگ DevOps همراهی می‌کنیم.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8 md:space-x-reverse">
+                <div class="flowchart-step text-center bg-[#C1E2F7] p-6 rounded-lg shadow-md w-64">
+                    <h3 class="text-xl font-bold">۱. مشاوره و طراحی</h3>
+                    <p class="text-sm mt-2">تحلیل نیاز و طراحی معماری بهینه</p>
+                </div>
+                <div class="flowchart-arrow text-4xl font-bold transform md:-rotate-0 -rotate-90">➔</div>
+                <div class="flowchart-step text-center bg-[#7CB5D2] p-6 rounded-lg shadow-md w-64">
+                    <h3 class="text-xl font-bold text-white">۲. پیاده‌سازی و راه‌اندازی</h3>
+                    <p class="text-sm mt-2 text-white/90">نصب و پیکربندی کامل پشته فناوری</p>
+                </div>
+                <div class="flowchart-arrow text-4xl font-bold transform md:-rotate-0 -rotate-90">➔</div>
+                <div class="flowchart-step text-center bg-[#366E8A] text-white p-6 rounded-lg shadow-md w-64">
+                    <h3 class="text-xl font-bold">۳. مدیریت و پشتیبانی</h3>
+                    <p class="text-sm mt-2">نگهداری، مانیتورینگ و بهینه‌سازی مستمر</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12">پشته فناوری ما: قدرت Open Source</h2>
+            <div class="max-w-2xl mx-auto bg-white/70 backdrop-blur-sm rounded-lg shadow-lg p-8">
+                <div class="tech-stack-layer text-center p-4">
+                    <h3 class="text-xl font-bold text-[#366E8A]">GitLab & ArgoCD</h3>
+                    <p>اتوماسیون کامل فرآیندهای CI/CD و پیاده‌سازی GitOps</p>
+                </div>
+                <div class="tech-stack-layer text-center p-4">
+                    <h3 class="text-xl font-bold text-[#366E8A]">Prometheus, Grafana, Loki</h3>
+                    <p>مانیتورینگ، تحلیل و مشاهده‌پذیری (Observability) جامع</p>
+                </div>
+                <div class="tech-stack-layer text-center p-4">
+                    <h3 class="text-xl font-bold text-[#366E8A]">Kubernetes (CKA/CKAD/CKS)</h3>
+                    <p>ارکستراسیون کانتینرها با تکیه بر تخصص تایید شده</p>
+                </div>
+                <div class="text-center p-4 bg-[#003F5C] rounded-b-lg">
+                    <h3 class="text-xl font-bold text-white">GNU/Linux</h3>
+                    <p class="text-white/90">بنیان استوار و امن زیرساخت شما</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+            <section id="target-market">
+                <div class="bg-white rounded-lg shadow-xl p-8 h-full">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#003F5C]">ما به چه سازمان‌هایی کمک می‌کنیم؟</h2>
+                    <p class="text-center text-[#366E8A] mb-8">Solutionsی ما برای سازمان‌هایی طراحی شده که امنیت، پایداری و کنترل کامل بر زیرساخت برایشان در اولویت است.</p>
+                    <div class="chart-container">
+                        <canvas id="targetMarketChart"></canvas>
+                    </div>
                 </div>
             </section>
 
-            <section id="ask-expert" class="mb-20 bg-white rounded-lg shadow-xl p-8 md:p-12">
-                <h2 class="text-3xl font-bold text-center mb-12 text-[#003F5C]">✨ از متخصص هوشمند ما بپرسید ✨</h2>
-                <p class="text-center max-w-3xl mx-auto mb-8 text-lg text-[#366E8A]">سوالات خود را در مورد کوبرنیت، DevOps یا زیرساخت‌های On-Premise مطرح کنید و پاسخ‌های تخصصی دریافت کنید.</p>
-                <div class="flex flex-col items-center space-y-6 max-w-2xl mx-auto">
-                    <textarea id="expertQuestion" class="w-full p-4 border border-[#7CB5D2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7CB5D2] text-lg text-[#003F5C]" rows="5" placeholder="سوال خود را اینجا بنویسید..."></textarea>
-                    <button id="askButton" class="bg-[#003F5C] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#366E8A] transition-colors shadow-md">پرسیدن</button>
-                    <div id="loadingIndicator" class="hidden text-[#366E8A] font-bold text-lg">در حال دریافت پاسخ...</div>
-                    <div id="expertAnswer" class="w-full bg-[#C1E2F7] text-[#003F5C] p-6 rounded-lg shadow-inner min-h-[100px] text-lg leading-relaxed">پاسخ را اینجا مشاهده خواهید کرد.</div>
+            <section id="value-proposition">
+                <div class="bg-white rounded-lg shadow-xl p-8 h-full">
+                    <h2 class="text-3xl font-bold text-center mb-4 text-[#003F5C]">ارزش پیشنهادی ما</h2>
+                    <p class="text-center text-[#366E8A] mb-8">ما با ترکیب تخصص فنی و ابزارهای قدرتمند، مزایای ملموسی برای کسب‌وکار شما ایجاد می‌کنیم.</p>
+                    <div class="chart-container">
+                        <canvas id="valuePropositionChart"></canvas>
+                    </div>
                 </div>
             </section>
+        </div>
 
-        </main>
+        <section id="packages" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12">پکیج‌های خدماتی متناسب با نیاز شما</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-[600px] text-center bg-white rounded-lg shadow-lg">
+                    <thead class="bg-[#366E8A] text-white">
+                        <tr>
+                            <th class="p-4 font-bold">ویژگی</th>
+                            <th class="p-4 font-bold">پشتیبانی پایه</th>
+                            <th class="p-4 font-bold">مدیریت استاندارد</th>
+                            <th class="p-4 font-bold">سازمانی اختصاصی</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-[#C1E2F7]">
+                            <td class="p-4 font-bold text-right">مشاوره و طراحی</td>
+                            <td class="p-4">✅</td>
+                            <td class="p-4">✅</td>
+                            <td class="p-4">✅</td>
+                        </tr>
+                        <tr class="border-b border-[#C1E2F7] bg-blue-50">
+                            <td class="p-4 font-bold text-right">پیاده‌سازی کامل پشته</td>
+                            <td class="p-4">✅</td>
+                            <td class="p-4">✅</td>
+                            <td class="p-4">✅</td>
+                        </tr>
+                        <tr class="border-b border-[#C1E2F7]">
+                            <td class="p-4 font-bold text-right">پشتیبانی (SLA)</td>
+                            <td class="p-4">۸x۵</td>
+                            <td class="p-4">۲۴x۷</td>
+                            <td class="p-4">اختصاصی</td>
+                        </tr>
+                        <tr class="border-b border-[#C1E2F7] bg-blue-50">
+                            <td class="p-4 font-bold text-right">مانیتورینگ جامع</td>
+                            <td class="p-4">پایه</td>
+                            <td class="p-4">پیشرفته</td>
+                            <td class="p-4">جامع</td>
+                        </tr>
+                        <tr class="border-b border-[#C1E2F7]">
+                            <td class="p-4 font-bold text-right">مدیریت CI/CD و GitOps</td>
+                            <td class="p-4">❌</td>
+                            <td class="p-4">✅</td>
+                            <td class="p-4">✅</td>
+                        </tr>
+                         <tr class="bg-blue-50">
+                            <td class="p-4 font-bold text-right">مدیر حساب اختصاصی</td>
+                            <td class="p-4">❌</td>
+                            <td class="p-4">❌</td>
+                            <td class="p-4">✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <!-- Footer (copied from index.html) -->
-        <footer id="footer">
-            <ul class="copyright">
-                <li>&copy; OpScale Solutions. All rights reserved.</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </footer>
-    </div>
+        <section id="ask-expert" class="mb-20 bg-white rounded-lg shadow-xl p-8 md:p-12">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#003F5C]">✨ از متخصص هوشمند ما بپرسید ✨</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-lg text-[#366E8A]">سوالات خود را در مورد کوبرنیت، DevOps یا زیرساخت‌های On-Premise مطرح کنید و پاسخ‌های تخصصی دریافت کنید.</p>
+            <div class="flex flex-col items-center space-y-6 max-w-2xl mx-auto">
+                <textarea id="expertQuestion" class="w-full p-4 border border-[#7CB5D2] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7CB5D2] text-lg text-[#003F5C]" rows="5" placeholder="سوال خود را اینجا بنویسید..."></textarea>
+                <button id="askButton" class="bg-[#003F5C] text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#366E8A] transition-colors shadow-md">پرسیدن</button>
+                <div id="loadingIndicator" class="hidden text-[#366E8A] font-bold text-lg">در حال دریافت پاسخ...</div>
+                <div id="expertAnswer" class="w-full bg-[#C1E2F7] text-[#003F5C] p-6 rounded-lg shadow-inner min-h-[100px] text-lg leading-relaxed">پاسخ را اینجا مشاهده خواهید کرد.</div>
+            </div>
+        </section>
 
-    <!-- Scripts (copied from index.html) -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <!-- ...existing chart.js and ask-expert script, unchanged... -->
-</body>
-</html>
+    </main>
+
+    <footer class="bg-[#003F5C] text-white text-center py-16 px-4">
+        <h2 class="text-3xl font-bold mb-4">آماده‌اید سفر مدرن‌سازی خود را آغاز کنید؟</h2>
+        <p class="text-lg mb-8 text-[#C1E2F7]">با ما تماس بگیرید تا در مورد چالش‌ها و اهداف شما گفتگو کنیم.</p>
+        <a href="mailto:solutions@opscale.ir" class="bg-white text-[#003F5C] font-bold py-3 px-8 rounded-full text-lg hover:bg-[#C1E2F7] transition-colors">تماس با ما</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const wrapLabel = (label) => {
+                if (label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > 16) {
                         lines.push(currentLine.trim());
                         currentLine = word;
                     } else {
