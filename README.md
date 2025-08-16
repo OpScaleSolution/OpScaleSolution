@@ -1,42 +1,46 @@
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CNCF Member](https://img.shields.io/badge/CNCF-Member-blueviolet.svg)](https://www.cncf.io/)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Certified%20Experts-blue.svg)](https://www.cncf.io/certification/)
 
-**Building Scalable SaaS Solutions with Cloud-Native Expertise.**
+**OpScale Solutions | Cloud Native & Kubernetes Experts**
 
-At OpScale Solutions, we are dedicated to architecting, developing, and deploying highly scalable and resilient Software-as-a-Service (SaaS) solutions. Leveraging our deep expertise in cloud-native technologies, particularly Kubernetes, we empower businesses to achieve agility, efficiency, and growth.
+OpScale Solutions specializes in designing, implementing, and supporting scalable cloud-native and on-premise infrastructures with a focus on Kubernetes, CNCF technologies, and open-source best practices.
 
-## Our Focus
+## What We Do
 
-* **Scalable Architectures:** Designing and implementing solutions that can seamlessly handle increasing user loads and data volumes.
-* **Cloud-Native Development:** Utilizing containerization (Docker), orchestration (Kubernetes), and microservices to build robust and maintainable applications.
-* **Automation & Infrastructure-as-Code:** Employing Infrastructure-as-Code (IaC) principles and automation tools to streamline deployments and management.
-* **Security First:** Integrating security best practices throughout the development lifecycle to ensure the integrity and confidentiality of our solutions.
-* **Continuous Delivery:** Implementing CI/CD pipelines for rapid and reliable software delivery.
+- **Cloud Native & On-Premise Infrastructure:** Consulting, design, and deployment of Kubernetes clusters (Cloud & On-Prem).
+- **DevOps Automation:** CI/CD, GitOps (ArgoCD, GitLab CI), Infrastructure-as-Code, and workflow automation.
+- **Monitoring & Observability:** Prometheus, Grafana, Loki, ELK Stack, and custom dashboards.
+- **Security & Compliance:** Data sovereignty, backup, disaster recovery, and advanced security (CKA, CKAD, CKS certified team).
+- **Migration & Modernization:** Application migration to microservices and cloud-native architectures.
+- **Training & Knowledge Transfer:** Workshops and enablement for internal teams.
+- **24x7 SLA-based Support:** Enterprise-grade support and managed services.
 
-## Expertise
+## Technology Stack
 
-Our team possesses significant experience and holds industry-recognized certifications, including:
+Kubernetes, Docker, Helm, ArgoCD, Prometheus, Grafana, Loki, ELK, GitLab CI, Linux, Ansible, Open Policy Agent, Istio, Jenkins, GitOps, Cloud Native Ecosystem.
 
-* **Certified Kubernetes Administrator (CKA)**
-* **Certified Kubernetes Application Developer (CKAD)**
-* **Certified Kubernetes Security Specialist (CKS)**
+## Team & Certifications
 
-This expertise ensures that our solutions are built on a solid foundation of best practices and deep understanding of the Kubernetes ecosystem.
+Our team includes:
+- **علیرضا طالقانی** ([GitHub](https://github.com/AliRezaTaleghani))
+- **مجتبی طالقانی** ([GitHub](https://github.com/mojitaleghani))
+- **محمدرضا طالقانی** ([LinkedIn](https://www.linkedin.com/in/mohammad-reza-taleghani-b6684049/), mrt.taleghani@gmail.com)
 
-## Collaboration & Engagement
+Certified: CKA, CKAD, CKS, CNCF Member
 
-We are committed to fostering collaboration and engaging with the open-source community. We actively explore opportunities to contribute to relevant projects and share our knowledge.
+## Open Source & Community
 
-If you are interested in partnering with us or learning more about our services, please feel free to reach out.
+Active contributor to CNCF and open-source projects. Committed to knowledge sharing and community engagement.
 
 ## Contact
 
-* **Email:** [solutions](mailto:solutions@opscale.ir)
-* **Website:** [OpScale](https://opscale.ir)
-* **LinkedIn:** WIP
-* **Twitter:** WIP
+- **Email:** [solutions@opscale.ir](mailto:solutions@opscale.ir)
+- **Website:** [opscale.ir](https://opscale.ir)
+- **LinkedIn:** [OpScale Solutions](https://www.linkedin.com/company/opscale-solutions)
+- **Twitter:** [@opscale_ir](https://twitter.com/opscale_ir)
 
 ## License
 
-This repository may contain open-source projects or contributions licensed under the [Specify License, e.g., Apache License 2.0]. See the `LICENSE` file for more details.
+This repository and its contents are licensed under the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0). See the `LICENSE` file for details.
