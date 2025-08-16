@@ -35,58 +35,102 @@
   </header>
 
   <!-- بنر اصلی -->
-  <section class="hero" id="home">
-    <h1>تحول دیجیتال با Kubernetes و Cloud Native</h1>
-    <p>زیرساخت ابری و <span class="en">On-Premise</span> با امنیت و چابکی جهانی</p>
-    <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Cloud Native" class="hero-img">
-    <a href="#contact" class="cta">مشاوره رایگان</a>
+  <section class="hero" id="home" style="background: linear-gradient(135deg,#e44c65 60%,#fff 100%); text-align:center; color:#fff; padding:4rem 1rem 3rem 1rem;">
+    <h1 style="font-size:2.7rem; font-weight:900; margin-bottom:1rem; animation:fade-in-up 1s;">مدرن‌سازی زیرساخت IT با راهکارهای ابری بومی</h1>
+    <p style="font-size:1.3rem; margin-bottom:2rem;">ارائه خدمات مدیریت‌شده کوبرنیتس On-Premise با تخصص بومی و فناوری‌های Open Source</p>
+    <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes" class="hero-img" style="height:90px; background:#fff; border-radius:50%; padding:10px; box-shadow:0 2px 8px #e44c6555;">
+    <br>
+    <a href="#contact" class="cta" style="margin-top:2rem;">دریافت مشاوره رایگان</a>
   </section>
 
   <!-- بخش مزایا -->
   <section class="advantages">
-    <h2>مزایا و ارزش پیشنهادی</h2>
-    <ul>
-      <li>امنیت و کنترل کامل داده‌ها (<span class="en">On-Premise</span> و <span class="en">Cloud</span>)</li>
-      <li>کاهش ریسک تحریم و استقلال از سرویس‌دهندگان خارجی</li>
-      <li>مقیاس‌پذیری، چابکی و اتوماسیون <span class="en">DevOps</span></li>
-      <li>استفاده از فناوری‌های متن‌باز و استانداردهای <span class="en">CNCF/K8s</span></li>
-      <li>بهینه‌سازی هزینه‌ها و بهره‌وری منابع</li>
-    </ul>
+    <h2 style="text-align:center; font-size:2rem; font-weight:700; margin-bottom:2rem;">چرا راهکارهای On-Premise ما؟</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem;">
+      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
+        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem;">
+          <span>🔒</span>
+        </div>
+        <h3 style="font-size:1.1rem; font-weight:600;">امنیت و کنترل کامل</h3>
+        <p style="color:#555; font-size:0.98rem;">کنترل کامل بر داده‌ها و زیرساخت، بدون نیاز به اعتماد به سرویس‌دهندگان خارجی.</p>
+      </div>
+      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
+        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem;">
+          <span>🛡️</span>
+        </div>
+        <h3 style="font-size:1.1rem; font-weight:600;">استقلال از تحریم‌ها</h3>
+        <p style="color:#555; font-size:0.98rem;">کاهش ریسک وابستگی به سرویس‌های خارجی و تضمین تداوم کسب‌وکار.</p>
+      </div>
+      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
+        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem;">
+          <span>⚙️</span>
+        </div>
+        <h3 style="font-size:1.1rem; font-weight:600;">انعطاف‌پذیری و سفارشی‌سازی</h3>
+        <p style="color:#555; font-size:0.98rem;">امکان پیاده‌سازی زیرساخت دقیقاً مطابق با نیازهای منحصربه‌فرد سازمان شما.</p>
+      </div>
+      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
+        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem;">
+          <span>📊</span>
+        </div>
+        <h3 style="font-size:1.1rem; font-weight:600;">حاکمیت داده‌ها</h3>
+        <p style="color:#555; font-size:0.98rem;">مطابقت با قوانین محلی و ملی برای سازمان‌های دولتی و مالی.</p>
+      </div>
+    </div>
   </section>
 
   <!-- خدمات و راهکارها -->
   <section class="services" id="services">
-    <h2>خدمات و راهکارها</h2>
-    <ul>
-      <li>مشاوره، طراحی و پیاده‌سازی زیرساخت ابری و <span class="en">On-Premise</span> با <span class="en">Kubernetes</span></li>
-      <li>راه‌اندازی و مدیریت خوشه‌های <span class="en">Kubernetes</span> (<span class="en">Cloud</span> و <span class="en">On-Prem</span>)</li>
-      <li>پیاده‌سازی <span class="en">CI/CD</span> و <span class="en">GitOps</span> (<span class="en">ArgoCD</span>, <span class="en">GitLab CI</span>)</li>
-      <li>مانیتورینگ و مشاهده‌پذیری (<span class="en">Prometheus</span>, <span class="en">Grafana</span>, <span class="en">Loki</span>, <span class="en">ELK</span>)</li>
-      <li>امنیت، پشتیبان‌گیری و <span class="en">Disaster Recovery</span></li>
-      <li>مهاجرت اپلیکیشن‌ها به معماری <span class="en">Cloud Native</span> و <span class="en">Microservices</span></li>
-      <li>آموزش و انتقال دانش به تیم‌های داخلی سازمان‌ها</li>
-      <li>پشتیبانی ۲۴x۷ و مدیریت <span class="en">SLA</span> محور</li>
-    </ul>
+    <h2 style="text-align:center; font-size:2rem; font-weight:700; margin-bottom:2rem;">فرآیند ارائه خدمات ما</h2>
+    <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; align-items:stretch;">
+      <div style="flex:1 1 220px; min-width:220px; max-width:320px; background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
+        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem; font-weight:bold;">1</div>
+        <h3 style="font-size:1.1rem; font-weight:600;">مشاوره و طراحی</h3>
+        <p style="color:#555; font-size:0.98rem;">تحلیل نیازهای شما و طراحی معماری زیرساخت مبتنی بر کوبرنیتس.</p>
+      </div>
+      <div style="flex:1 1 220px; min-width:220px; max-width:320px; background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
+        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem; font-weight:bold;">2</div>
+        <h3 style="font-size:1.1rem; font-weight:600;">پیاده‌سازی و راه‌اندازی</h3>
+        <p style="color:#555; font-size:0.98rem;">اجرای کامل پشته فناوری و راه‌اندازی آن در محیط On-Premise.</p>
+      </div>
+      <div style="flex:1 1 220px; min-width:220px; max-width:320px; background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
+        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem; font-weight:bold;">3</div>
+        <h3 style="font-size:1.1rem; font-weight:600;">مدیریت و پشتیبانی</h3>
+        <p style="color:#555; font-size:0.98rem;">پشتیبانی و مدیریت مستمر زیرساخت برای تضمین عملکرد بهینه.</p>
+      </div>
+    </div>
   </section>
 
   <!-- پشته فناوری و اکوسیستم CNCF -->
   <section class="tech-stack" id="solutions">
-    <h2>پشته فناوری و اکوسیستم CNCF</h2>
-    <div class="logos">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/istio/icon/color/istio-icon-color.svg" alt="Istio" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/opa/icon/color/opa-icon-color.svg" alt="Open Policy Agent" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/ansible/icon/color/ansible-icon-color.svg" alt="Ansible" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/linux/icon/color/linux-icon-color.svg" alt="Linux" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/gitlab/icon/color/gitlab-icon-color.svg" alt="GitLab CI" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/elk/icon/color/elk-icon-color.svg" alt="ELK" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/loki/icon/color/loki-icon-color.svg" alt="Loki" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/grafana/icon/color/grafana-icon-color.svg" alt="Grafana" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/prometheus/icon/color/prometheus-icon-color.svg" alt="Prometheus" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/argocd/icon/color/argocd-icon-color.svg" alt="ArgoCD" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/helm/icon/color/helm-icon-color.svg" alt="Helm" height="32">
-      <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/docker/icon/color/docker-icon-color.svg" alt="Docker" height="32">
+    <h2 style="text-align:center; font-size:2rem; font-weight:700; margin-bottom:2rem;">پشته فناوری و ابزارهای ما</h2>
+    <p style="text-align:center; color:#555; margin-bottom:1.5rem;">ما با استفاده از فناوری‌های Open Source و ابزارهای پیشرو در اکوسیستم CNCF، راهکارهای قدرتمندی ارائه می‌دهیم.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1.2rem; justify-items:center;">
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes" style="height:48px; margin-bottom:0.5rem;">
+        <span style="font-size:1rem; font-weight:600;">Kubernetes</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/docker/icon/color/docker-icon-color.svg" alt="Docker" style="height:48px; margin-bottom:0.5rem;">
+        <span style="font-size:1rem; font-weight:600;">Docker</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/jenkins/icon/color/jenkins-icon-color.svg" alt="Jenkins" style="height:48px; margin-bottom:0.5rem;">
+        <span style="font-size:1rem; font-weight:600;">CI/CD</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/gitlab/icon/color/gitlab-icon-color.svg" alt="GitLab CI" style="height:48px; margin-bottom:0.5rem;">
+        <span style="font-size:1rem; font-weight:600;">GitOps</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/prometheus/icon/color/prometheus-icon-color.svg" alt="Prometheus" style="height:48px; margin-bottom:0.5rem;">
+        <span style="font-size:1rem; font-weight:600;">Monitoring</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/linux/icon/color/linux-icon-color.svg" alt="Linux" style="height:48px; margin-bottom:0.5rem;">
+        <span style="font-size:1rem; font-weight:600;">Linux</span>
+      </div>
     </div>
-    <p>مشارکت فعال در جامعه متن‌باز و پروژه‌های CNCF</p>
+    <p style="text-align:center; margin-top:1.5rem;">مشارکت فعال در جامعه متن‌باز و پروژه‌های CNCF</p>
   </section>
 
   <!-- نمودارها و اینفوگرافیک‌ها -->
