@@ -1,294 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اپ‌اسکیل سولوشنز | Kubernetes & Cloud Native</title>
-  <meta name="description" content="زیرساخت ابری و On-Premise با امنیت و چابکی جهانی - خدمات Kubernetes و Cloud Native">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.003.0/dist/font-face.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-  <!-- هدر و منو -->
-  <header class="header">
-    <div class="logo">
-      <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes Logo" height="40">
-      <span>اپ‌اسکیل سولوشنز</span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#home">خانه</a></li>
-        <li><a href="#about">درباره ما</a></li>
-        <li><a href="#services">خدمات</a></li>
-        <li><a href="#solutions">راهکارها</a></li>
-        <li><a href="#resources">منابع</a></li>
-        <li><a href="#blog">بلاگ</a></li>
-        <li><a href="#contact">تماس</a></li>
-        <li><a href="presentation.html">تحلیل بازار</a></li>
-      </ul>
-    </nav>
-    <div class="certs">
-      <img src="https://raw.githubusercontent.com/cncf/artwork/master/other/cncf/cncf-color.svg" alt="CNCF" height="32">
-      <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/certified-kubernetes/certified-kubernetes-color.svg" alt="Kubernetes Certified" height="32">
-      <img src="https://raw.githubusercontent.com/cncf/artwork/master/other/oss/oss-color.svg" alt="Open Source" height="32">
-    </div>
-  </header>
-
-  <!-- بنر اصلی -->
-  <section class="hero" id="home" style="background: linear-gradient(135deg,#e44c65 60%,#fff 100%); text-align:center; color:#fff; padding:4rem 1rem 3rem 1rem;">
-    <h1 style="font-size:2.7rem; font-weight:900; margin-bottom:1rem; animation:fade-in-up 1s;">مدرن‌سازی زیرساخت IT با راهکارهای ابری بومی</h1>
-    <p style="font-size:1.3rem; margin-bottom:2rem;">ارائه خدمات مدیریت‌شده کوبرنیتس On-Premise با تخصص بومی و فناوری‌های Open Source</p>
-    <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes" class="hero-img" style="height:90px; background:#fff; border-radius:50%; padding:10px; box-shadow:0 2px 8px #e44c6555;">
-    <br>
-    <a href="#contact" class="cta" style="margin-top:2rem;">دریافت مشاوره رایگان</a>
-  </section>
-
-  <!-- بخش مزایا -->
-  <section class="advantages">
-    <h2 style="text-align:center; font-size:2rem; font-weight:700; margin-bottom:2rem;">چرا راهکارهای On-Premise ما؟</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem;">
-      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
-        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem;">
-          <span>🔒</span>
-        </div>
-        <h3 style="font-size:1.1rem; font-weight:600;">امنیت و کنترل کامل</h3>
-        <p style="color:#555; font-size:0.98rem;">کنترل کامل بر داده‌ها و زیرساخت، بدون نیاز به اعتماد به سرویس‌دهندگان خارجی.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
-        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem;">
-          <span>🛡️</span>
-        </div>
-        <h3 style="font-size:1.1rem; font-weight:600;">استقلال از تحریم‌ها</h3>
-        <p style="color:#555; font-size:0.98rem;">کاهش ریسک وابستگی به سرویس‌های خارجی و تضمین تداوم کسب‌وکار.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
-        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem;">
-          <span>⚙️</span>
-        </div>
-        <h3 style="font-size:1.1rem; font-weight:600;">انعطاف‌پذیری و سفارشی‌سازی</h3>
-        <p style="color:#555; font-size:0.98rem;">امکان پیاده‌سازی زیرساخت دقیقاً مطابق با نیازهای منحصربه‌فرد سازمان شما.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
-        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem;">
-          <span>📊</span>
-        </div>
-        <h3 style="font-size:1.1rem; font-weight:600;">حاکمیت داده‌ها</h3>
-        <p style="color:#555; font-size:0.98rem;">مطابقت با قوانین محلی و ملی برای سازمان‌های دولتی و مالی.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- خدمات و راهکارها -->
-  <section class="services" id="services">
-    <h2 style="text-align:center; font-size:2rem; font-weight:700; margin-bottom:2rem;">فرآیند ارائه خدمات ما</h2>
-    <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; align-items:stretch;">
-      <div style="flex:1 1 220px; min-width:220px; max-width:320px; background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
-        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem; font-weight:bold;">1</div>
-        <h3 style="font-size:1.1rem; font-weight:600;">مشاوره و طراحی</h3>
-        <p style="color:#555; font-size:0.98rem;">تحلیل نیازهای شما و طراحی معماری زیرساخت مبتنی بر کوبرنیتس.</p>
-      </div>
-      <div style="flex:1 1 220px; min-width:220px; max-width:320px; background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
-        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem; font-weight:bold;">2</div>
-        <h3 style="font-size:1.1rem; font-weight:600;">پیاده‌سازی و راه‌اندازی</h3>
-        <p style="color:#555; font-size:0.98rem;">اجرای کامل پشته فناوری و راه‌اندازی آن در محیط On-Premise.</p>
-      </div>
-      <div style="flex:1 1 220px; min-width:220px; max-width:320px; background:#fff; border-radius:12px; box-shadow:0 2px 8px #e44c6555; padding:1.2rem; text-align:center;">
-        <div style="width:48px; height:48px; margin:0 auto 1rem; background:#e44c65; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.7rem; font-weight:bold;">3</div>
-        <h3 style="font-size:1.1rem; font-weight:600;">مدیریت و پشتیبانی</h3>
-        <p style="color:#555; font-size:0.98rem;">پشتیبانی و مدیریت مستمر زیرساخت برای تضمین عملکرد بهینه.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- پشته فناوری و اکوسیستم CNCF -->
-  <section class="tech-stack" id="solutions">
-    <h2 style="text-align:center; font-size:2rem; font-weight:700; margin-bottom:2rem;">پشته فناوری و ابزارهای ما</h2>
-    <p style="text-align:center; color:#555; margin-bottom:1.5rem;">ما با استفاده از فناوری‌های Open Source و ابزارهای پیشرو در اکوسیستم CNCF، راهکارهای قدرتمندی ارائه می‌دهیم.</p>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1.2rem; justify-items:center;">
-      <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes" style="height:48px; margin-bottom:0.5rem;">
-        <span style="font-size:1rem; font-weight:600;">Kubernetes</span>
-      </div>
-      <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/docker/icon/color/docker-icon-color.svg" alt="Docker" style="height:48px; margin-bottom:0.5rem;">
-        <span style="font-size:1rem; font-weight:600;">Docker</span>
-      </div>
-      <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/jenkins/icon/color/jenkins-icon-color.svg" alt="Jenkins" style="height:48px; margin-bottom:0.5rem;">
-        <span style="font-size:1rem; font-weight:600;">CI/CD</span>
-      </div>
-      <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/gitlab/icon/color/gitlab-icon-color.svg" alt="GitLab CI" style="height:48px; margin-bottom:0.5rem;">
-        <span style="font-size:1rem; font-weight:600;">GitOps</span>
-      </div>
-      <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/prometheus/icon/color/prometheus-icon-color.svg" alt="Prometheus" style="height:48px; margin-bottom:0.5rem;">
-        <span style="font-size:1rem; font-weight:600;">Monitoring</span>
-      </div>
-      <div style="display:flex; flex-direction:column; align-items:center;">
-        <img src="https://cdn.jsdelivr.net/gh/cncf/artwork/projects/linux/icon/color/linux-icon-color.svg" alt="Linux" style="height:48px; margin-bottom:0.5rem;">
-        <span style="font-size:1rem; font-weight:600;">Linux</span>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:1.5rem;">مشارکت فعال در جامعه متن‌باز و پروژه‌های CNCF</p>
-  </section>
-
-  <!-- نمودارها و اینفوگرافیک‌ها -->
-  <section class="charts">
-    <h2>بازار هدف و ارزش پیشنهادی</h2>
-    <canvas id="marketChart" width="400" height="200"></canvas>
-    <canvas id="valueChart" width="400" height="200"></canvas>
-    <script src="main.js"></script>
-  </section>
-
-  <!-- جدول مقایسه پکیج‌های خدماتی -->
-  <section class="packages">
-    <h2>جدول مقایسه پکیج‌ها</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>پکیج</th>
-          <th>مشاوره</th>
-          <th>پیاده‌سازی</th>
-          <th>SLA</th>
-          <th>مانیتورینگ</th>
-          <th>CI/CD</th>
-          <th>مدیر حساب</th>
-          <th>امنیت پیشرفته</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>پایه</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>⏺️</td>
-          <td>✔️</td>
-          <td>⏺️</td>
-          <td>⏺️</td>
-          <td>⏺️</td>
-        </tr>
-        <tr>
-          <td>استاندارد</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>⏺️</td>
-        </tr>
-        <tr>
-          <td>سازمانی اختصاصی</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- معرفی تیم و تخصص‌ها -->
-  <section class="team">
-    <h2>تیم و تخصص‌ها</h2>
-    <div class="members">
-      <div class="member">
-        <img src="https://avatars.githubusercontent.com/u/45499?v=4" alt="علیرضا طالقانی" height="64">
-        <p>علیرضا طالقانی<br>
-          <a href="https://github.com/AliRezaTaleghani" target="_blank">GitHub</a>
-        </p>
-      </div>
-      <div class="member">
-        <img src="https://avatars.githubusercontent.com/u/43955725?v=4" alt="مجتبی طالقانی" height="64">
-        <p>مجتبی طالقانی<br>
-          <a href="https://github.com/mojitaleghani" target="_blank">GitHub</a>
-        </p>
-      </div>
-      <div class="member">
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHovqrCZ9WX8w/profile-displayphoto-shrink_200_200/B4DZQdM3r4HYAY-/0/1735656711569?e=1758153600&v=beta&t=p3ltikKSxNcETQSkgK3SiS0939k9cNYD90X4f9jnoUQ" alt="محمدرضا طالقانی" height="64">
-        <p>محمدرضا طالقانی<br>
-          <a href="https://www.linkedin.com/in/mohammad-reza-taleghani-b6684049/" target="_blank">LinkedIn</a>
-        </p>
-      </div>
-    </div>
-    <p>عضویت در CNCF و مشارکت در جامعه متن‌باز</p>
-  </section>
-
-  <!-- بخش مشتریان و نمونه پروژه‌ها -->
-  <section class="clients">
-    <h2>مشتریان و نمونه پروژه‌ها</h2>
-    <div class="client-logos">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Bank_Melli_Iran_logo.svg" alt="Bank Melli" height="40">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Irancell_logo.svg" alt="Irancell" height="40">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Tehran_Municipality_logo.svg" alt="Tehran Municipality" height="40">
-    </div>
-    <p>نمونه پروژه‌های موفق در بانک‌ها، سازمان‌های دولتی و شرکت‌های نرم‌افزاری</p>
-  </section>
-
-  <!-- دعوت به همکاری و تماس -->
-  <section class="contact" id="contact">
-    <h2>دعوت به همکاری و تماس</h2>
-    <form>
-      <input type="text" placeholder="نام شما" required>
-      <input type="email" placeholder="ایمیل" required>
-      <textarea placeholder="پیام شما" required></textarea>
-      <button type="submit">ارسال پیام</button>
-    </form>
-    <div class="contact-info">
-      <p>ایمیل: info@opscale.solutions</p>
-      <p>وبسایت: www.opscale.solutions</p>
-      <p>شبکه‌های اجتماعی: <a href="https://ir.linkedin.com/company/opscale">LinkedIn</a> | <a href="https://twitter.com">Twitter</a></p>
-    </div>
-    <a href="#contact" class="cta">درخواست جلسه مشاوره رایگان</a>
-  </section>
-
-  <!-- منابع و بلاگ -->
-  <section class="resources" id="resources">
-    <h2>منابع و بلاگ</h2>
-    <ul>
-      <li><a href="https://kubernetes.io/fa/docs/">مستندات Kubernetes</a></li>
-      <li><a href="https://www.cncf.io/blog/">بلاگ CNCF</a></li>
-      <li><a href="https://opscale.solutions/blog">بلاگ اپ‌اسکیل سولوشنز</a></li>
-      <li><a href="https://grafana.com/blog/">مقالات Grafana</a></li>
-      <li><a href="https://prometheus.io/docs/">مستندات Prometheus</a></li>
-    </ul>
-  </section>
-
-  <!-- سوالات متداول -->
-  <section class="faq">
-    <h2>سوالات متداول</h2>
-    <details>
-      <summary>مزایای Kubernetes چیست؟</summary>
-      <p>مقیاس‌پذیری، چابکی، امنیت و اتوماسیون زیرساخت.</p>
-    </details>
-    <details>
-      <summary>تفاوت On-Prem و Cloud چیست؟</summary>
-      <p>کنترل داده‌ها و امنیت بیشتر در On-Prem، چابکی و مقیاس‌پذیری در Cloud.</p>
-    </details>
-    <details>
-      <summary>هزینه‌ها چگونه محاسبه می‌شود؟</summary>
-      <p>بر اساس نوع خدمات، حجم زیرساخت و سطح پشتیبانی.</p>
-    </details>
-    <details>
-      <summary>آیا مهاجرت به Cloud Native دشوار است؟</summary>
-      <p>با راهکارهای ما، مهاجرت سریع و امن انجام می‌شود.</p>
-    </details>
-  </section>
-
-  <!-- فوتر -->
-  <footer class="footer">
-    <p>© 2025 اپ‌اسکیل سولوشنز | عضو CNCF | Kubernetes Certified</p>
-    <p>قالب HTML5 UP | رنگ سازمانی <span style="color:#e44c65">#e44c65</span> | فونت Vazirmatn | طراحی راست‌به‌چپ | ریسپانسیو</p>
-    <p><a href="presentation.html" style="color:#e44c65; font-weight:bold;">تحلیل بازار خدمات کوبرنیت On-Premise</a></p>
-    <div class="footer-logos">
-      <img src="https://raw.githubusercontent.com/cncf/artwork/master/other/cncf/cncf-color.svg" alt="CNCF" height="24">
-      <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/certified-kubernetes/certified-kubernetes-color.svg" alt="Kubernetes Certified" height="24">
-    </div>
-  </footer>
-</body>
-</html>
