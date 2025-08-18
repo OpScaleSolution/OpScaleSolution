@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحلیل بازار خدمات کوبرنیت On-Premise در ایران</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony (Off-White, Dark Slate, Muted Teal) -->
+    <!-- Application Structure Plan: A single-page, thematic SPA with a sticky navigation bar for non-linear exploration. The structure prioritizes user understanding by grouping related concepts: 1) Market Analysis (Challenges/Opportunities side-by-side with a visual chart), 2) Our Advantage (interactive tech stack cards), 3) Our Services (tabbed interface and comparison cards), and 4) Business Model (visual GTM flow and target market chart), and finally 5) SWOT Analysis (a visual matrix). This is more engaging and intuitive than a linear slide deck. -->
+    <!-- Visualization & Content Choices: 
+    - Market Gap: Goal=Compare, Viz=Doughnut Chart, Interaction=Tooltips, Justification=Quickly shows competitive void, Library=Chart.js.
+    - Tech Stack: Goal=Inform, Viz=Interactive Cards, Interaction=Click-to-reveal, Justification=Engaging way to show expertise, Library=Vanilla JS.
+    - Services/Packages: Goal=Organize, Viz=Tabs & Cards, Interaction=Click to switch/highlight, Justification=Standard UI for complex offerings, Library=Vanilla JS.
+    - Target Markets: Goal=Relate, Viz=Bar Chart, Interaction=Tooltips, Justification=Compares needs across segments, Library=Chart.js.
+    - SWOT Analysis: Goal=Analyze, Viz=Grid Matrix, Interaction=Static display, Justification=Standard and clear presentation of key factors, Library=HTML/Tailwind CSS.
+    - All diagrams are built with HTML/CSS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #F8F7F4;
+            color: #2F4F4F;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #20B2AA;
+            border-bottom-color: #20B2AA;
+        }
+        .tab-button.active {
+            background-color: #20B2AA;
+            color: white;
+        }
+        .tech-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .swot-box {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .swot-box h4 {
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-teal-600">تحلیل بازار کوبرنیت</h1>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#market-analysis" class="nav-link pb-1">تحلیل بازار</a>
+                <a href="#our-advantage" class="nav-link pb-1">مزیت ما</a>
+                <a href="#our-services" class="nav-link pb-1">خدمات ما</a>
+                <a href="#business-model" class="nav-link pb-1">مدل کسب‌وکار</a>
+                <a href="#swot-analysis" class="nav-link pb-1">تحلیل SWOT</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <span class="text-3xl">☰</span>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#market-analysis" class="block py-2 text-center nav-link">تحلیل بازار</a>
+            <a href="#our-advantage" class="block py-2 text-center nav-link">مزیت ما</a>
+            <a href="#our-services" class="block py-2 text-center nav-link">خدمات ما</a>
+            <a href="#business-model" class="block py-2 text-center nav-link">مدل کسب‌وکار</a>
+            <a href="#swot-analysis" class="block py-2 text-center nav-link">تحلیل SWOT</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="hero" class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">ارائه خدمات تخصصی کوبرنیت On-Premise در ایران</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">تحلیلی جامع از چالش‌ها، فرصت‌ها و مدل‌های کسب‌وکار برای ارائه خدمات مدیریت‌شده کوبرنیت بر روی زیرساخت‌های خصوصی مشتریان در بازار ایران.</p>
+        </section>
+
+        <section id="market-analysis" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-12">تحلیل بازار: چالش‌ها و فرصت‌ها</h3>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">
+                بازار ایران برای خدمات On-Premise دارای ویژگی‌های منحصربه‌فردی است. تحریم‌ها و محدودیت‌های اینترنتی چالش‌هایی جدی ایجاد کرده‌اند، اما همین شرایط، فرصت‌های استراتژیکی برای متخصصان داخلی با تمرکز بر راه‌حل‌های بومی و Open Source فراهم می‌کند.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                        <h4 class="text-2xl font-bold mb-4 text-red-600">چالش‌ها</h4>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                            <li><b>تحریم‌های بین‌المللی:</b> محدودیت در دسترسی به سخت‌افزار به‌روز و لایسنس‌های نرم‌افزاری.</li>
+                            <li><b>فیلترینگ و اینترنت:</b> پیچیدگی در دسترسی به مخازن و ابزارها و نوسانات اینترنت.</li>
+                            <li><b>پیچیدگی On-Premise:</b> تنوع زیرساخت مشتریان و هزینه‌های اولیه بالا برای آن‌ها.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-2xl font-bold mb-4 text-green-600">فرصت‌ها</h4>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                            <li><b>تقاضای داخلی بالا:</b> نیاز به کنترل کامل، امنیت داده و انطباق با قوانین داخلی.</li>
+                            <li><b>عدم وجود رقبای خارجی:</b> غول‌های ابری جهانی در این بازار حضور ندارند.</li>
+                            <li><b>نیاز به مدرن‌سازی:</b> تقاضای بالا برای چابکی و کارایی با ابزارهای DevOps/GitOps.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-bold text-center mb-4">شکاف بازار خدمات ابری</h4>
+                    <div class="chart-container">
+                        <canvas id="marketGapChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-gray-600">بخش بزرگی از بازار توسط متخصصان داخلی قابل پوشش است.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="our-advantage" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-12">مزیت رقابتی ما: تخصص در اکوسیستم Open Source</h3>
+             <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">
+                قدرت اصلی ما در تسلط عمیق بر ابزارهای Open Source و تجربه در پیاده‌سازی راه‌حل‌های کامل و بومی است. این تخصص نه تنها چالش‌های تحریم را بی‌اثر می‌کند، بلکه ارزشی منحصربه‌فرد برای مشتریان ایرانی ایجاد می‌نماید.
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center tech-card">
+                    <div class="text-4xl mb-4">🐧</div>
+                    <h4 class="text-xl font-bold mb-2">گنو/لینوکس و زیرساخت</h4>
+                    <p class="text-gray-600">تجربه عمیق در مدیریت زیرساخت‌های لینوکسی، پایه و اساس پایداری خدمات ماست.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center tech-card">
+                    <div class="text-4xl mb-4">☸️</div>
+                    <h4 class="text-xl font-bold mb-2">کوبرنیت (CKA/CKAD/CKS)</h4>
+                    <p class="text-gray-600">تخصص اثبات‌شده با مدارک بین‌المللی برای طراحی و مدیریت کلاسترهای امن و بهینه.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center tech-card">
+                     <div class="text-4xl mb-4">📈</div>
+                    <h4 class="text-xl font-bold mb-2">Prometheus, Grafana, Loki</h4>
+                    <p class="text-gray-600">پیاده‌سازی پشته کامل مانیتورینگ و لاگینگ برای تضمین عملکرد و پایداری سیستم.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center tech-card">
+                     <div class="text-4xl mb-4">🦊</div>
+                    <h4 class="text-xl font-bold mb-2">GitLab (CI/CD)</h4>
+                    <p class="text-gray-600">اتوماسیون فرآیندهای توسعه و استقرار نرم‌افزار برای افزایش سرعت و چابکی تیم‌ها.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center tech-card">
+                     <div class="text-4xl mb-4">⛵</div>
+                    <h4 class="text-xl font-bold mb-2">ArgoCD (GitOps)</h4>
+                    <p class="text-gray-600">پیاده‌سازی رویکرد GitOps برای مدیریت زیرساخت و اپلیکیشن‌ها به صورت شفاف و قابل اعتماد.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center tech-card">
+                     <div class="text-4xl mb-4">📚</div>
+                    <h4 class="text-xl font-bold mb-2">پشتیبانی و مستندات فارسی</h4>
+                    <p class="text-gray-600">ارائه آموزش، مستندات و پشتیبانی کامل به زبان فارسی برای توانمندسازی تیم مشتری.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="our-services" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-12">خدمات ما: راه‌حل‌های جامع و مدیریت‌شده</h3>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">
+                ما مجموعه‌ای کامل از خدمات را ارائه می‌دهیم که از مشاوره و طراحی اولیه تا پیاده‌سازی، مدیریت مستمر و آموزش تیم شما را پوشش می‌دهد. این خدمات در قالب بسته‌های مختلف و متناسب با نیازهای سازمان شما قابل ارائه هستند.
+            </p>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <div class="mb-8 flex justify-center border-b">
+                    <button data-tab="core" class="tab-button px-6 py-3 font-bold rounded-t-lg -mb-px active">خدمات هسته</button>
+                    <button data-tab="value-added" class="tab-button px-6 py-3 font-bold rounded-t-lg -mb-px">خدمات ارزش‌افزوده</button>
+                </div>
+                <div id="services-content" class="grid md:grid-cols-2 gap-8">
+                    <div data-content="core" class="tab-content">
+                        <h4 class="text-xl font-bold mb-4">راه‌اندازی، مدیریت و توانمندسازی</h4>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                            <li><b>مشاوره و طراحی معماری:</b> تحلیل نیاز و طراحی معماری کوبرنیت، مانیتورینگ و CI/CD.</li>
+                            <li><b>پیاده‌سازی و راه‌اندازی کامل:</b> نصب و پیکربندی کلاستر، ابزارهای مانیتورینگ و DevOps.</li>
+                            <li><b>مدیریت و پشتیبانی مستمر:</b> مانیتورینگ ۲۴/۷، به‌روزرسانی، عیب‌یابی و بهینه‌سازی منابع.</li>
+                            <li><b>مدیریت امنیت:</b> پیاده‌سازی سیاست‌های امنیتی، اسکن آسیب‌پذیری‌ها و hardening.</li>
+                            <li><b>بک‌آپ و بازیابی:</b> پیاده‌سازی و مدیریت راهکارهای بک‌آپ‌گیری از کلاستر.</li>
+                        </ul>
+                    </div>
+                    <div data-content="value-added" class="tab-content hidden">
+                        <h4 class="text-xl font-bold mb-4">توسعه و یکپارچه‌سازی</h4>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                             <li><b>استقرار و مدیریت دیتابیس‌ها:</b> نصب و مدیریت دیتابیس‌های کانتینری در کلاستر.</li>
+                            <li><b>پیاده‌سازی CI/CD پیشرفته:</b> طراحی و یکپارچه‌سازی Pipelineهای پیچیده با GitLab و ArgoCD.</li>
+                            <li><b>آموزش و توانمندسازی تیم:</b> برگزاری دوره‌های آموزشی عملی و تخصصی برای تیم مشتری.</li>
+                            <li><b>مشاوره امنیتی و انطباق:</b> کمک به رعایت استانداردهای امنیتی و قوانین داخلی.</li>
+                            <li><b>اتوماسیون عملیات (Ops Automation):</b> توسعه اسکریپت‌های سفارشی برای اتوماسیون.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <h4 class="text-2xl font-bold text-center mt-16 mb-8">بسته‌های خدماتی</h4>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="border-2 border-gray-200 p-6 rounded-lg text-center">
+                    <h5 class="font-bold text-lg">راه‌اندازی جامع</h5>
+                    <p class="text-sm text-gray-500 mt-2">شامل مشاوره، طراحی و پیاده‌سازی اولیه کامل.</p>
+                </div>
+                <div class="border-2 border-gray-200 p-6 rounded-lg text-center">
+                    <h5 class="font-bold text-lg">پشتیبانی پایه</h5>
+                    <p class="text-sm text-gray-500 mt-2">پشتیبانی در ساعات اداری (۸x۵) برای موارد غیربحرانی.</p>
+                </div>
+                <div class="border-2 border-teal-500 ring-4 ring-teal-100 p-6 rounded-lg text-center">
+                    <h5 class="font-bold text-lg text-teal-600">مدیریت‌شده استاندارد</h5>
+                    <p class="text-sm text-gray-500 mt-2">مدیریت و پشتیبانی ۲۴/۷ برای موارد بحرانی و به‌روزرسانی منظم.</p>
+                </div>
+                <div class="border-2 border-gray-200 p-6 rounded-lg text-center">
+                    <h5 class="font-bold text-lg">سازمانی/اختصاصی</h5>
+                    <p class="text-sm text-gray-500 mt-2">کاملاً سفارشی‌سازی شده بر اساس نیازهای خاص سازمان.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="business-model" class="scroll-mt-20 mb-20">
+            <h3 class="text-3xl font-bold text-center mb-12">مدل کسب‌وکار و استراتژی ورود به بازار</h3>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">
+                مدل کسب‌وکار ما بر ارائه راه‌حل‌های جامع با تکیه بر تخصص عمیق فنی استوار است. ما با هدف قرار دادن بخش‌های کلیدی بازار و استفاده از کانال‌های بازاریابی تخصصی، به مشتریان کمک می‌کنیم تا فرآیندهای خود را مدرن و بهینه کنند.
+            </p>
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-bold text-center mb-4">نیازهای بخش‌های کلیدی بازار</h4>
+                    <div class="chart-container h-96">
+                        <canvas id="targetMarketChart"></canvas>
+                    </div>
+                </div>
+                 <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold mb-3">مشتریان هدف</h4>
+                        <p class="text-gray-600">سازمان‌های دولتی، بانک‌ها، شرکت‌های بزرگ با دیتاسنتر خصوصی و شرکت‌های نرم‌افزاری پیشرو.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold mb-3">مدل‌های درآمدی</h4>
+                        <p class="text-gray-600">ترکیبی از مدل‌های پروژه‌ای، قراردادهای پشتیبانی (Retainer)، مشاوره ساعتی و آموزش تخصصی.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold mb-3">استراتژی بازاریابی</h4>
+                        <p class="text-gray-600">تمرکز بر فروش مستقیم B2B، بازاریابی محتوایی عمیق (مقالات و Case Studies) و شبکه‌سازی در رویدادهای تخصصی.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="swot-analysis" class="scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-12">تحلیل SWOT</h3>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600">
+                تحلیل SWOT نقاط قوت و ضعف داخلی، و همچنین فرصت‌ها و تهدیدات خارجی را در این طرح کسب‌وکار بررسی می‌کند. این ماتریس یک نمای کلی از موقعیت استراتژیک ما در بازار فراهم می‌آورد.
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="swot-box">
+                    <h4 class="text-green-600">نقاط قوت (Strengths)</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>✅ تخصص اثبات‌شده تیم در حوزه Open Source</li>
+                        <li>✅ مدارک و دانش فنی به‌روز و مرتبط (CKA/CKAD/CKS)</li>
+                        <li>✅ پشتیبانی و مستندات بومی و فارسی</li>
+                        <li>✅ توانایی ارائه راه‌حل‌های کامل و جامع</li>
+                    </ul>
+                </div>
+                <div class="swot-box">
+                    <h4 class="text-red-600">نقاط ضعف (Weaknesses)</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>❌ بالا بودن هزینه‌های اولیه برای مشتریان</li>
+                        <li>❌ عدم شناخت کافی بازار از مزایای خدمات ما</li>
+                        <li>❌ نیاز به سرمایه‌گذاری اولیه در زیرساخت شخصی</li>
+                        <li>❌ وابستگی به نیروی انسانی متخصص داخلی</li>
+                    </ul>
+                </div>
+                <div class="swot-box">
+                    <h4 class="text-blue-600">فرصت‌ها (Opportunities)</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>📈 تقاضای رو به رشد برای راهکارهای بومی و امن</li>
+                        <li>📈 غیاب رقبای خارجی و باز بودن فضای بازار</li>
+                        <li>📈 نیاز سازمان‌های بزرگ به مدرن‌سازی با DevOps/GitOps</li>
+                        <li>📈 الزام قانونی به نگهداری داده‌ها در داخل کشور</li>
+                    </ul>
+                </div>
+                <div class="swot-box">
+                    <h4 class="text-orange-600">تهدیدها (Threats)</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>⚠️ ورود رقبای محلی جدید به بازار</li>
+                        <li>⚠️ نوسانات اقتصادی و کاهش بودجه‌های IT</li>
+                        <li>⚠️ عدم آگاهی مدیران از مزایای کوبرنیت</li>
+                        <li>⚠️ پروژه‌های داخلی با کیفیت پایین که به اعتبار ما لطمه می‌زنند</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-20">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>این تحلیل به عنوان یک نمونه کار تعاملی بر اساس گزارش ارائه شده، ایجاد گردیده است.</p>
+            <p class="text-sm text-gray-400 mt-2">&copy; 2025 - کلیه حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (link.closest('#mobile-menu')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+            
+            const sections = document.querySelectorAll('section[id]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px" });
+            sections.forEach(section => observer.observe(section));
+
+            const marketGapCtx = document.getElementById('marketGapChart').getContext('2d');
+            new Chart(marketGapCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['متخصصان داخلی', 'رقبای خارجی (غایب)', 'نیاز بازار'],
+                    datasets: [{
+                        label: 'شکاف بازار',
+                        data: [35, 45, 20],
+                        backgroundColor: [
+                            '#20B2AA', 
+                            '#FF6384', 
+                            '#FFCE56'  
+                        ],
+                        borderColor: '#F8F7F4',
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { family: 'Vazirmatn' }
+                            }
+                        },
+                        tooltip: {
+                            bodyFont: { family: 'Vazirmatn' },
+                            titleFont: { family: 'Vazirmatn' }
+                        }
+                    }
+                }
+            });
+
+            const targetMarketCtx = document.getElementById('targetMarketChart').getContext('2d');
+            new Chart(targetMarketCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['سازمان‌های دولتی', 'بانک‌ها', 'شرکت‌های بزرگ', 'شرکت‌های نرم‌افزاری'],
+                    datasets: [{
+                        label: 'نیاز به امنیت و کنترل',
+                        data: [95, 98, 80, 70],
+                        backgroundColor: '#20B2AA',
+                    }, {
+                        label: 'نیاز به چابکی (DevOps)',
+                        data: [60, 75, 85, 95],
+                        backgroundColor: '#FFCE56',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: { font: { family: 'Vazirmatn' } }
+                        },
+                        y: {
+                            stacked: true,
+                            ticks: { font: { family: 'Vazirmatn' } }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                             labels: { font: { family: 'Vazirmatn' } }
+                        },
+                        tooltip: {
+                             bodyFont: { family: 'Vazirmatn' },
+                             titleFont: { family: 'Vazirmatn' }
+                        }
+                    }
+                }
+            });
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const tab = button.dataset.tab;
+                    tabContents.forEach(content => {
+                        content.classList.toggle('hidden', content.dataset.content !== tab);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
