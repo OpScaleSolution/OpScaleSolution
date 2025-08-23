@@ -34,12 +34,13 @@ Certified: CKA, CKAD, CKS, CNCF Member
 
 Active contributor to CNCF and open-source projects. Committed to knowledge sharing and community engagement.
 
-## Contact
+## Contact & Community
 
 - **Email:** [solutions@opscale.ir](mailto:solutions@opscale.ir)
 - **Website:** [opscale.ir](https://opscale.ir)
-- **LinkedIn:** [OpScale Solutions](https://www.linkedin.com/company/opscale-solutions)
-- **Twitter:** [@opscale_ir](https://twitter.com/opscale_ir)
+- **LinkedIn:** [OpScale Solutions](http://linkedin.com/company/opscale)
+- **Slack:** [OpScale Community](https://opscale-talk.slack.com)
+- **X (Twitter):** [@OpScaleSolutions](https://x.com/OpScaleSolutions)
 
 ## License
 
