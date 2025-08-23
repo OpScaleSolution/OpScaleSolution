@@ -26,7 +26,7 @@ Kubernetes, Docker, Helm, ArgoCD, Prometheus, Grafana, Loki, ELK, GitLab CI, Lin
 Our team includes:
 - **علیرضا طالقانی** ([GitHub](https://github.com/AliRezaTaleghani))
 - **مجتبی طالقانی** ([GitHub](https://github.com/mojitaleghani))
-- **محمدرضا طالقانی** ([LinkedIn](https://www.linkedin.com/in/mohammad-reza-taleghani-b6684049/), mrt.taleghani@gmail.com)
+- **محمدرضا طالقانی** ([LinkedIn](https://www.linkedin.com/in/mohammad-reza-taleghani-b6684049))
 
 Certified: CKA, CKAD, CKS, CNCF Member
 
