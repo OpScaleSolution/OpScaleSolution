@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اپ‌اسکیل سولوشنز | راهکار جامع زیرساخت ابری و DevOps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Vazirmatn', sans-serif; scroll-behavior: smooth; }
+        .rtl-table { direction: rtl; }
+        .rtl-table th, .rtl-table td { text-align: right; }
+        .tier-button.active { background-color: #2563eb; color: white; border-color: #2563eb; }
+        .flow-arrow { font-size: 2rem; color: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Opscale</h1>
+            <div class="flex flex-wrap gap-4">
+                <a href="#home" class="nav-link text-slate-600 hover:text-blue-600 transition">خانه</a>
+                <a href="#market" class="nav-link text-slate-600 hover:text-blue-600 transition">تحلیل بازار</a>
+                <a href="#tiers" class="nav-link text-slate-600 hover:text-blue-600 transition">طرح‌ها</a>
+                <a href="#tech" class="nav-link text-slate-600 hover:text-blue-600 transition">فناوری‌ها</a>
+                <a href="#process" class="nav-link text-slate-600 hover:text-blue-600 transition">فرآیندها</a>
+                <a href="#value" class="nav-link text-slate-600 hover:text-blue-600 transition">مزایا</a>
+                <a href="#packages" class="nav-link text-slate-600 hover:text-blue-600 transition">پکیج‌ها</a>
+                <a href="#team" class="nav-link text-slate-600 hover:text-blue-600 transition">تیم</a>
+                <a href="#business" class="nav-link text-slate-600 hover:text-blue-600 transition">مدل کسب‌وکار</a>
+                <a href="#swot" class="nav-link text-slate-600 hover:text-blue-600 transition">SWOT</a>
+                <a href="#contact" class="nav-link text-slate-600 hover:text-blue-600 transition">تماس</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container mx-auto px-6 py-12">
+        <!-- Hero Section -->
+        <section id="home" class="text-center py-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">مدرن‌سازی زیرساخت IT با راهکارهای ابری بومی و Kubernetes</h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4">ارائه خدمات مدیریت‌شده کوبرنیتس On-Premise با تخصص بومی و فناوری‌های Open Source. تیم شما از دغدغه‌های زیرساختی رها شده و می‌تواند بر نوآوری و توسعه محصول تمرکز کند.</p>
+            <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes" class="mx-auto mb-4" style="height:90px;background:#fff;border-radius:50%;padding:10px;box-shadow:0 2px 8px #e44c6555;">
+            <a href="#contact" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition text-lg">دریافت مشاوره رایگان</a>
+        </section>
+
+        <!-- Market Analysis -->
+        <section id="market" class="py-16">
+            <h3 class="text-3xl font-bold mb-2 text-center">تحلیل بازار: چالش‌ها و فرصت‌ها</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow mb-4">
+                        <h4 class="text-xl font-bold mb-2 text-blue-600">چالش‌ها</h4>
+                        <ul class="list-disc list-inside text-slate-600">
+                            <li>تحریم‌های بین‌المللی و محدودیت سخت‌افزار و لایسنس</li>
+                            <li>فیلترینگ و نوسانات اینترنت</li>
+                            <li>پیچیدگی و هزینه اولیه بالا برای On-Premise</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="text-xl font-bold mb-2 text-teal-600">فرصت‌ها</h4>
+                        <ul class="list-disc list-inside text-slate-600">
+                            <li>تقاضای داخلی بالا برای امنیت و کنترل داده</li>
+                            <li>عدم حضور رقبای خارجی</li>
+                            <li>نیاز به مدرن‌سازی و ابزارهای DevOps/GitOps</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow flex flex-col justify-center items-center">
+                    <h4 class="text-xl font-bold mb-2 text-blue-600">شکاف بازار خدمات ابری</h4>
+                    <div class="chart-container"><canvas id="marketGapChart"></canvas></div>
+                    <p class="text-slate-600 mt-4">بخش بزرگی از بازار توسط متخصصان داخلی قابل پوشش است.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tiers Section -->
+        <section id="tiers" class="py-16">
+            <h3 class="text-3xl font-bold mb-6 text-center">طرح متناسب با کسب‌وکار خود را انتخاب کنید</h3>
+            <p class="text-slate-500 text-center mb-8">راهکارهای ما بر اساس مقیاس و نیازهای منحصر به فرد شما طراحی شده‌اند.</p>
+            <div class="flex justify-center items-center gap-4 mb-10 flex-wrap">
+                <button id="btn-small" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600 active" onclick="selectTier('small')">شرکت کوچک</button>
+                <button id="btn-medium" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600" onclick="selectTier('medium')">شرکت متوسط</button>
+                <button id="btn-large" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600" onclick="selectTier('large')">شرکت بزرگ</button>
+            </div>
+            <div id="tier-content" class="bg-white p-8 rounded-xl shadow-lg transition-all duration-500">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+            <script>
+            const tierData = {
+                small: {
+                    title: "سطح ۱: شرکت کوچک (تا ۱۰۰ هزار مشتری)",
+                    goal: "ایجاد یک زیرساخت پایدار و قابل اتکا برای شروع قدرتمند، مبتنی بر Kubernetes.",
+                    hardware: `<div class=\"overflow-x-auto\"><table class=\"w-full rtl-table border-collapse\"><thead><tr class=\"bg-slate-100\"><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">نوع منبع</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">تعداد</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">مشخصات (هر واحد)</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">توضیحات</th></tr></thead><tbody><tr><td class=\"p-3 border border-slate-200\">Kubernetes Master</td><td class=\"p-3 border border-slate-200\">۱</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">مدیریت کلاستر و کنترل پنل.</td></tr><tr><td class=\"p-3 border border-slate-200\">Kubernetes Worker</td><td class=\"p-3 border border-slate-200\">۳</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">اجرای سرویس‌ها و اپلیکیشن‌ها.</td></tr><tr><td class=\"p-3 border border-slate-200\">VM (GitLab)</td><td class=\"p-3 border border-slate-200\">۱</td><td class=\"p-3 border border-slate-200\">۴ هسته CPU، ۸ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">GitLab خارج از کلاستر برای مدیریت کد.</td></tr><tr><td class=\"p-3 border border-slate-200\">فضای ذخیره‌سازی</td><td class=\"p-3 border border-slate-200\">۵۰۰ گیگابایت</td><td class=\"p-3 border border-slate-200\">-</td><td class=\"p-3 border border-slate-200\">فضای بلاک برای پایگاه‌های داده و اپلیکیشن‌ها.</td></tr></tbody></table></div>`,
+                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><ul class=\"list-disc list-inside space-y-1 text-slate-600\"><li><code>*.app.opscale.ir</code> برای انتشار سرویس‌های شما.</li><li><code>*.infra.opscale.ir</code> برای دسترسی امن به ابزارهای زیرساختی.</li></ul>`
+                },
+                medium: {
+                    title: "سطح ۲: شرکت متوسط (تا ۱ میلیون مشتری)",
+                    goal: "پیاده‌سازی یک زیرساخت پویا و با قابلیت رشد بالا، مبتنی بر Kubernetes.",
+                    hardware: `<div class=\"overflow-x-auto\"><table class=\"w-full rtl-table border-collapse\"><thead><tr class=\"bg-slate-100\"><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">نوع منبع</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">تعداد</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">مشخصات (هر واحد)</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">توضیحات</th></tr></thead><tbody><tr><td class=\"p-3 border border-slate-200\">Kubernetes Master</td><td class=\"p-3 border border-slate-200\">۳</td><td class=\"p-3 border border-slate-200\">۱۶ هسته CPU، ۳۲ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">High Availability برای مدیریت کلاستر.</td></tr><tr><td class=\"p-3 border border-slate-200\">Kubernetes Worker</td><td class=\"p-3 border border-slate-200\">۷</td><td class=\"p-3 border border-slate-200\">۱۶ هسته CPU، ۳۲ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">اجرای سرویس‌ها و اپلیکیشن‌ها با مقیاس‌پذیری بالا.</td></tr><tr><td class=\"p-3 border border-slate-200\">VM (GitLab)</td><td class=\"p-3 border border-slate-200\">۲</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">GitLab خارج از کلاستر با Redundancy.</td></tr><tr><td class=\"p-3 border border-slate-200\">فضای ذخیره‌سازی</td><td class=\"p-3 border border-slate-200\">۱ ترابایت</td><td class=\"p-3 border border-slate-200\">-</td><td class=\"p-3 border border-slate-200\">فضای بلاک با قابلیت افزایش خودکار.</td></tr></tbody></table></div>`,
+                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><ul class=\"list-disc list-inside space-y-1 text-slate-600\"><li><code>*.cloud.opscale.ir</code> برای انتشار سرویس‌ها.</li><li><code>*.infra.cloud.opscale.ir</code> برای ابزارهای زیرساخت.</li></ul>`
+                },
+                large: {
+                    title: "سطح ۳: شرکت بزرگ",
+                    goal: "طراحی یک راهکار سفارشی و جامع برای پروژه‌های در مقیاس بسیار بزرگ.",
+                    hardware: `<p class=\"text-slate-600 text-center p-8 bg-slate-100 rounded-lg\">در این سطح، نیازمند یک <strong>ارزیابی دقیق فنی (Technical Assessment)</strong> هستیم. ما با همکاری شما، یک معماری چندمنطقه‌ای (Multi-Region) با استفاده از منابع اختصاصی طراحی خواهیم کرد تا بالاترین سطح از کارایی، پایداری و امنیت را برای شما به ارمغان بیاوریم.</p>`,
+                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><p class=\"text-slate-600\">ساختار دامنه کاملاً سفارشی و بر اساس ساختار سازمانی و پروژه‌های شما طراحی می‌شود تا بهترین انطباق را با نیازهایتان داشته باشد.</p>`
+                }
+            };
+            const tierContentDiv = document.getElementById('tier-content');
+            const buttons = {
+                small: document.getElementById('btn-small'),
+                medium: document.getElementById('btn-medium'),
+                large: document.getElementById('btn-large')
+            };
+            function selectTier(tier) {
+                const data = tierData[tier];
+                tierContentDiv.innerHTML = `<h3 class=\"text-2xl font-bold mb-2\">${data.title}</h3><p class=\"text-slate-500 mb-6\">${data.goal}</p>${data.hardware}${data.domain}`;
+                Object.values(buttons).forEach(button => button.classList.remove('active'));
+                buttons[tier].classList.add('active');
+            }
+            window.onload = () => {
+                selectTier('small');
+            };
+            </script>
+        </section>
+
+        <!-- Technology Stack Section -->
+        <section id="tech" class="py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-2">فناوری‌های اصلی ما</h3>
+                <p class="text-slate-500">ما از ابزارهای مدرن و اثبات‌شده برای ساخت زیرساختی پایدار و کارآمد استفاده می‌کنیم.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-4xl mb-4">☸️</div>
+                    <h4 class="text-xl font-bold mb-2">Kubernetes</h4>
+                    <p class="text-slate-600">به عنوان مغز متفکر زیرساخت، به صورت هوشمند و خودکار سرویس‌ها را مدیریت و منابع را بهینه می‌کند.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-4xl mb-4">🦊</div>
+                    <h4 class="text-xl font-bold mb-2">GitLab</h4>
+                    <p class="text-slate-600">پلتفرمی یکپارچه برای مدیریت کامل چرخه‌ی توسعه، از کدنویسی تا استقرار نهایی.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h4 class="text-xl font-bold mb-2">Prometheus & Loki</h4>
+                    <p class="text-slate-600">یک راهکار کامل برای مانیتورینگ متریک‌ها و مدیریت لاگ‌ها جهت رصد کامل و عیب‌یابی سریع سیستم.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h4 class="text-xl font-bold mb-2">LetsEncrypt</h4>
+                    <p class="text-slate-600">تولید و مدیریت خودکار گواهی‌های SSL برای رمزنگاری و امن‌سازی تمامی ارتباطات.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CI/CD Process Section -->
+        <section id="process" class="py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-2">فرآیند توسعه و استقرار خودکار (CI/CD)</h3>
+                <p class="text-slate-500">سرعت بیشتر در ارائه محصول و کاهش خطاهای انسانی با اتوماسیون کامل.</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                <div class="bg-white p-4 rounded-lg shadow w-48">
+                    <p class="font-bold">۱. ارسال کد</p>
+                    <p class="text-sm text-slate-500">توسعه‌دهنده کد را به GitLab ارسال می‌کند.</p>
+                </div>
+                <div class="flow-arrow transform md:-rotate-90">➔</div>
+                <div class="bg-white p-4 rounded-lg shadow w-48">
+                    <p class="font-bold">۲. ساخت و تست</p>
+                    <p class="text-sm text-slate-500">ساخت ایمیج Docker و اجرای تست‌های خودکار.</p>
+                </div>
+                <div class="flow-arrow transform md:-rotate-90">➔</div>
+                <div class="bg-white p-4 rounded-lg shadow w-48">
+                    <p class="font-bold">۳. استقرار</p>
+                    <p class="text-sm text-slate-500">ایمیج جدید در Kubernetes مستقر می‌شود.</p>
+                </div>
+                <div class="flow-arrow transform md:-rotate-90">➔</div>
+                <div class="bg-white p-4 rounded-lg shadow w-48">
+                    <p class="font-bold">۴. سرویس آنلاین</p>
+                    <p class="text-sm text-slate-500">نسخه جدید برای کاربران در دسترس است.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition Section -->
+        <section id="value" class="py-16">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-2">مزایای سرمایه‌گذاری با Opscale</h3>
+                <p class="text-slate-500">همکاری با ما یک استراتژی برای رشد پایدار و مزیت رقابتی شماست.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow">
+                    <h4 class="text-xl font-bold mb-2">📈 افزایش پایداری</h4>
+                    <p class="text-slate-600">با اتوماسیون و مانیتورینگ مداوم، سرویس‌های شما با بالاترین سطح پایداری و Uptime کار خواهند کرد.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow">
+                    <h4 class="text-xl font-bold mb-2">💡 تمرکز بر نوآوری</h4>
+                    <p class="text-slate-600">تیم شما از دغدغه‌های زیرساختی آزاد شده و می‌تواند بر توسعه‌ی ویژگی‌های جدید و بهبود محصول تمرکز کند.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow">
+                    <h4 class="text-xl font-bold mb-2">🚀 مقیاس‌پذیری آسان</h4>
+                    <p class="text-slate-600">زیرساخت به راحتی و به صورت خودکار با رشد کسب‌وکار شما مقیاس‌پذیر خواهد بود.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Comparison Section -->
+        <section id="packages" class="py-16">
+            <h2 class="text-3xl font-bold mb-6 text-center">جدول مقایسه پکیج‌ها</h2>
+            <div class="bg-white p-6 rounded-lg shadow text-center">
+                <table class="w-full border-collapse mt-4">
+                    <thead>
+                        <tr>
+                            <th>پکیج</th>
+                            <th>مشاوره</th>
+                            <th>پیاده‌سازی</th>
+                            <th>SLA</th>
+                            <th>مانیتورینگ</th>
+                            <th>CI/CD</th>
+                            <th>مدیر حساب</th>
+                            <th>امنیت پیشرفته</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>پایه</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>⏺️</td>
+                            <td>✔️</td>
+                            <td>⏺️</td>
+                            <td>⏺️</td>
+                            <td>⏺️</td>
+                        </tr>
+                        <tr>
+                            <td>استاندارد</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>⏺️</td>
+                        </tr>
+                        <tr>
+                            <td>سازمانی اختصاصی</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                            <td>✔️</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-16">
+            <h2 class="text-3xl font-bold mb-6 text-center">تیم و تخصص‌ها</h2>
+            <div class="bg-white p-6 rounded-lg shadow text-center">
+                <div class="flex gap-8 justify-center flex-wrap">
+                    <div class="text-center">
+                        <img src="https://github.com/AliRezaTaleghani.png" alt="علیرضا طالقانی" class="rounded-full mx-auto mb-2" style="width:110px;height:110px;object-fit:cover;">
+                        <p>علیرضا طالقانی<br><a href="https://github.com/AliRezaTaleghani" target="_blank">GitHub</a></p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://github.com/mojitaleghani.png" alt="مجتبی طالقانی" class="rounded-full mx-auto mb-2" style="width:110px;height:110px;object-fit:cover;">
+                        <p>مجتبی طالقانی<br><a href="https://github.com/mojitaleghani" target="_blank">GitHub</a></p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHovqrCZ9WX8w/profile-displayphoto-shrink_800_800/B4DZQdM3r4HYAc-/0/1735656711597?e=1758153600&v=beta&t=4s9uEQWdfHbzq1aifmixOUG8s3SSBVivj7YlnRZ_hDQ" alt="محمدرضا طالقانی" class="rounded-full mx-auto mb-2" style="width:110px;height:110px;object-fit:cover;">
+                        <p>محمدرضا طالقانی<br><a href="https://www.linkedin.com/in/mohammad-reza-taleghani-b6684049/" target="_blank">LinkedIn</a></p>
+                    </div>
+                </div>
+                <p class="mt-4">عضویت در CNCF و مشارکت در جامعه متن‌باز</p>
+            </div>
+        </section>
+
+        <!-- Business Model Section -->
+        <section id="business" class="py-16">
+            <h2 class="text-3xl font-bold mb-6 text-center">مدل کسب‌وکار و استراتژی ورود به بازار</h2>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-blue-600">نیازهای بخش‌های کلیدی بازار</h4>
+                        <div class="chart-container"><canvas id="targetMarketChart"></canvas></div>
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <h4 class="font-bold mb-1">مشتریان هدف</h4>
+                            <p>سازمان‌های دولتی، بانک‌ها، شرکت‌های بزرگ با دیتاسنتر خصوصی و شرکت‌های نرم‌افزاری پیشرو.</p>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-bold mb-1">مدل‌های درآمدی</h4>
+                            <p>ترکیبی از مدل‌های پروژه‌ای، قراردادهای پشتیبانی (Retainer)، مشاوره ساعتی و آموزش تخصصی.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-1">استراتژی بازاریابی</h4>
+                            <p>تمرکز بر فروش مستقیم B2B، بازاریابی محتوایی عمیق (مقالات و Case Studies) و شبکه‌سازی در رویدادهای تخصصی.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SWOT Section -->
+        <section id="swot" class="py-16">
+            <h2 class="text-3xl font-bold mb-6 text-center">تحلیل SWOT</h2>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="swot-box">
+                        <h4 class="text-blue-600 font-bold mb-2">نقاط قوت (Strengths)</h4>
+                        <ul class="text-slate-600">
+                            <li>✅ تخصص اثبات‌شده تیم در حوزه Open Source</li>
+                            <li>✅ مدارک و دانش فنی به‌روز و مرتبط (CKA/CKAD/CKS)</li>
+                            <li>✅ پشتیبانی و مستندات بومی و فارسی</li>
+                            <li>✅ توانایی ارائه راه‌حل‌های کامل و جامع</li>
+                        </ul>
+                    </div>
+                    <div class="swot-box">
+                        <h4 class="text-red-500 font-bold mb-2">نقاط ضعف (Weaknesses)</h4>
+                        <ul class="text-slate-600">
+                            <li>❌ بالا بودن هزینه‌های اولیه برای مشتریان</li>
+                            <li>❌ عدم شناخت کافی بازار از مزایای خدمات ما</li>
+                            <li>❌ نیاز به سرمایه‌گذاری اولیه در زیرساخت شخصی</li>
+                            <li>❌ وابستگی به نیروی انسانی متخصص داخلی</li>
+                        </ul>
+                    </div>
+                    <div class="swot-box">
+                        <h4 class="text-teal-600 font-bold mb-2">فرصت‌ها (Opportunities)</h4>
+                        <ul class="text-slate-600">
+                            <li>📈 تقاضای رو به رشد برای راهکارهای بومی و امن</li>
+                            <li>📈 غیاب رقبای خارجی و باز بودن فضای بازار</li>
+                            <li>📈 نیاز سازمان‌های بزرگ به مدرن‌سازی با DevOps/GitOps</li>
+                            <li>📈 الزام قانونی به نگهداری داده‌ها در داخل کشور</li>
+                        </ul>
+                    </div>
+                    <div class="swot-box">
+                        <h4 class="text-pink-400 font-bold mb-2">تهدیدها (Threats)</h4>
+                        <ul class="text-slate-600">
+                            <li>⚠️ ورود رقبای محلی جدید به بازار</li>
+                            <li>⚠️ نوسانات اقتصادی و کاهش بودجه‌های IT</li>
+                            <li>⚠️ عدم آگاهی مدیران از مزایای کوبرنیت</li>
+                            <li>⚠️ پروژه‌های داخلی با کیفیت پایین که به اعتبار ما لطمه می‌زنند</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <!-- Managerial Concerns Section -->
+        <section id="contact" class="py-16 bg-white rounded-xl shadow-lg">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold mb-2">اطمینان مدیریتی و شروع همکاری</h3>
+                <p class="text-slate-500">ما شفافیت و تعهد را در تمام مراحل همکاری تضمین می‌کنیم.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-right">
+                <div>
+                    <h4 class="text-lg font-bold mb-2">مدل مالی و هزینه‌ها</h4>
+                    <p class="text-slate-600">ارائه‌ی یک مدل مالی شفاف بر اساس منابع مصرفی یا یک پکیج ثابت ماهانه، با قابلیت مقیاس‌پذیری هزینه‌ها.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-2">توافق‌نامه سطح خدمات (SLA)</h4>
+                    <p class="text-slate-600">ارائه‌ی یک توافق‌نامه مشخص با تضمین Uptime بالا (مثلاً ۹۹.۹۵٪) و زمان پاسخ‌دهی سریع به مشکلات.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-2">مدیریت پروژه و ارتباطات</h4>
+                    <p class="text-slate-600">ارائه‌ی یک نقشه راه واضح برای پیاده‌سازی و اختصاص یک مدیر پروژه برای هماهنگی مداوم.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="mailto:contact@opscale.ir" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition text-lg">شروع مشاوره رایگان</a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white text-center py-6 mt-12 rounded-t-xl">
+        <p>© 2025 اپ‌اسکیل سولوشنز | عضو CNCF | Kubernetes Certified</p>
+        <div class="flex justify-center gap-4 mt-2">
+            <img src="https://www.cncf.io/wp-content/uploads/2023/04/cncf-main-site-logo.svg" alt="CNCF" class="h-10 w-auto">
+            <img src="https://github.com/cncf/artwork/raw/refs/heads/main/projects/kubernetes/horizontal/color/kubernetes-horizontal-color.png" alt="Kubernetes Certified" class="h-10 w-auto">                        
+        </div>
+    </footer>
+    <!-- Scripts for charts and tier selection -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+        // اسکرول نرم و فعال‌سازی تب‌ها
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+                }
+            });
+        });
+        // فعال‌سازی تب هنگام اسکرول
+        window.addEventListener('scroll', function() {
+            const scrollPos = window.scrollY || document.documentElement.scrollTop;
+            document.querySelectorAll('section[id]').forEach(section => {
+                const link = document.querySelector('.nav-link[href="#'+section.id+'"]');
+                if (section.offsetTop - 80 <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('text-blue-600', 'font-bold'));
+                    if(link) link.classList.add('text-blue-600', 'font-bold');
+                }
+            });
+        });
+        // نمونه اسکریپت برای نمودار و انتخاب طرح (در صورت وجود)
+        // Chart.js و سایر اسکریپت‌ها را اینجا قرار دهید
+        </script>
+</body>
+</html>
