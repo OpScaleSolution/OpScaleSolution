@@ -1,416 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اپ‌اسکیل سولوشنز | Cloud Native & Kubernetes</title>
-  <meta name="description" content="زیرساخت ابری و On-Premise با امنیت و چابکی جهانی - خدمات Kubernetes و Cloud Native">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.003.0/dist/font-face.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    .sticky-nav {position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #eee;}
-    .nav-link {padding:0.7rem 1.2rem;display:inline-block;color:#222;font-weight:500;text-decoration:none;transition:color .2s;}
-    .nav-link.active,.nav-link:hover {color:#e44c65;border-bottom:2px solid #e44c65;}
-    .tab-button.active {background:#e44c65;color:#fff;}
-    .tab-content {display:none;}
-    .tab-content.active {display:block;}
-    .swot-box {background:#fff;padding:1.5rem;border-radius:0.5rem;box-shadow:0 4px 6px -1px #e44c6555,0 2px 4px -1px #e44c6555;}
-    .swot-box h4 {font-weight:bold;font-size:1.15rem;margin-bottom:1rem;}
-    .chart-container {max-width:400px;margin:auto;}
-    @media(max-width:700px){.nav-link{padding:0.5rem 0.7rem;}}
-  </style>
-</head>
-<body>
-  <header class="sticky-nav">
-    <nav style="display:flex;justify-content:center;align-items:center;gap:0.5rem;">
-      <a href="#home" class="nav-link active">خانه</a>
-      <a href="#market-analysis" class="nav-link">تحلیل بازار</a>
-      <a href="#advantages" class="nav-link">مزایا</a>
-      <a href="#services" class="nav-link">خدمات</a>
-      <a href="#tech-stack" class="nav-link">پشته فناوری</a>
-      <a href="#charts" class="nav-link">نمودارها</a>
-      <a href="#packages" class="nav-link">پکیج‌ها</a>
-      <a href="#team" class="nav-link">تیم</a>
-      <a href="#business-model" class="nav-link">مدل کسب‌وکار</a>
-      <a href="#swot" class="nav-link">SWOT</a>
-      <a href="#contact" class="nav-link">تماس</a>
-    </nav>
-  </header>
-
-  <section id="home" class="hero" style="background:linear-gradient(135deg,#e44c65 60%,#fff 100%);text-align:center;color:#fff;padding:4rem 1rem 3rem 1rem;">
-    <h1 style="font-size:2.7rem;font-weight:900;margin-bottom:1rem;">مدرن‌سازی زیرساخت IT با راهکارهای ابری بومی</h1>
-    <p style="font-size:1.3rem;margin-bottom:2rem;">ارائه خدمات مدیریت‌شده کوبرنیتس On-Premise با تخصص بومی و فناوری‌های Open Source</p>
-  <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes" style="height:90px;background:#fff;border-radius:50%;padding:10px;box-shadow:0 2px 8px #e44c6555;">
-    <br>
-    <a href="#contact" class="cta" style="margin-top:2rem;">دریافت مشاوره رایگان</a>
-  </section>
-
-  <section id="market-analysis" style="margin:3rem 0;">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">تحلیل بازار: چالش‌ها و فرصت‌ها</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;align-items:center;">
-      <div>
-        <div style="background:#fff;padding:1.2rem;border-radius:12px;box-shadow:0 2px 8px #e44c6555;margin-bottom:1rem;">
-          <h4 style="color:#e44c65;font-size:1.2rem;font-weight:bold;margin-bottom:1rem;">چالش‌ها</h4>
-          <ul style="color:#444;font-size:1rem;">
-            <li>تحریم‌های بین‌المللی و محدودیت سخت‌افزار و لایسنس</li>
-            <li>فیلترینگ و نوسانات اینترنت</li>
-            <li>پیچیدگی و هزینه اولیه بالا برای On-Premise</li>
-          </ul>
-        </div>
-        <div style="background:#fff;padding:1.2rem;border-radius:12px;box-shadow:0 2px 8px #e44c6555;">
-          <h4 style="color:#20B2AA;font-size:1.2rem;font-weight:bold;margin-bottom:1rem;">فرصت‌ها</h4>
-          <ul style="color:#444;font-size:1rem;">
-            <li>تقاضای داخلی بالا برای امنیت و کنترل داده</li>
-            <li>عدم حضور رقبای خارجی</li>
-            <li>نیاز به مدرن‌سازی و ابزارهای DevOps/GitOps</li>
-          </ul>
-        </div>
-      </div>
-      <div style="background:#fff;padding:1.2rem;border-radius:12px;box-shadow:0 2px 8px #e44c6555;">
-        <h4 style="text-align:center;color:#e44c65;font-size:1.2rem;font-weight:bold;margin-bottom:1rem;">شکاف بازار خدمات ابری</h4>
-        <div class="chart-container"><canvas id="marketGapChart"></canvas></div>
-        <p style="text-align:center;color:#666;margin-top:1rem;">بخش بزرگی از بازار توسط متخصصان داخلی قابل پوشش است.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="advantages" class="advantages">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">چرا راهکارهای On-Premise ما؟</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
-      <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px #e44c6555;padding:1.2rem;text-align:center;">
-        <div style="width:48px;height:48px;margin:0 auto 1rem;background:#e44c65;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;">🔒</div>
-        <h3 style="font-size:1.1rem;font-weight:600;">امنیت و کنترل کامل</h3>
-        <p style="color:#555;font-size:0.98rem;">کنترل کامل بر داده‌ها و زیرساخت، بدون نیاز به اعتماد به سرویس‌دهندگان خارجی.</p>
-      </div>
-      <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px #e44c6555;padding:1.2rem;text-align:center;">
-        <div style="width:48px;height:48px;margin:0 auto 1rem;background:#e44c65;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;">🛡️</div>
-        <h3 style="font-size:1.1rem;font-weight:600;">استقلال از تحریم‌ها</h3>
-        <p style="color:#555;font-size:0.98rem;">کاهش ریسک وابستگی به سرویس‌های خارجی و تضمین تداوم کسب‌وکار.</p>
-      </div>
-      <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px #e44c6555;padding:1.2rem;text-align:center;">
-        <div style="width:48px;height:48px;margin:0 auto 1rem;background:#e44c65;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;">⚙️</div>
-        <h3 style="font-size:1.1rem;font-weight:600;">انعطاف‌پذیری و سفارشی‌سازی</h3>
-        <p style="color:#555;font-size:0.98rem;">امکان پیاده‌سازی زیرساخت دقیقاً مطابق با نیازهای منحصربه‌فرد سازمان شما.</p>
-      </div>
-      <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px #e44c6555;padding:1.2rem;text-align:center;">
-        <div style="width:48px;height:48px;margin:0 auto 1rem;background:#e44c65;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;">📊</div>
-        <h3 style="font-size:1.1rem;font-weight:600;">حاکمیت داده‌ها</h3>
-        <p style="color:#555;font-size:0.98rem;">مطابقت با قوانین محلی و ملی برای سازمان‌های دولتی و مالی.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="services">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">فرآیند ارائه خدمات ما</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:stretch;">
-      <div style="flex:1 1 220px;min-width:220px;max-width:320px;background:#fff;border-radius:12px;box-shadow:0 2px 8px #e44c6555;padding:1.2rem;text-align:center;">
-        <div style="width:48px;height:48px;margin:0 auto 1rem;background:#e44c65;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-weight:bold;">1</div>
-        <h3 style="font-size:1.1rem;font-weight:600;">مشاوره و طراحی</h3>
-        <p style="color:#555;font-size:0.98rem;">تحلیل نیازهای شما و طراحی معماری زیرساخت مبتنی بر کوبرنیتس.</p>
-      </div>
-      <div style="flex:1 1 220px;min-width:220px;max-width:320px;background:#fff;border-radius:12px;box-shadow:0 2px 8px #e44c6555;padding:1.2rem;text-align:center;">
-        <div style="width:48px;height:48px;margin:0 auto 1rem;background:#e44c65;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-weight:bold;">2</div>
-        <h3 style="font-size:1.1rem;font-weight:600;">پیاده‌سازی و راه‌اندازی</h3>
-        <p style="color:#555;font-size:0.98rem;">اجرای کامل پشته فناوری و راه‌اندازی آن در محیط On-Premise.</p>
-      </div>
-      <div style="flex:1 1 220px;min-width:220px;max-width:320px;background:#fff;border-radius:12px;box-shadow:0 2px 8px #e44c6555;padding:1.2rem;text-align:center;">
-        <div style="width:48px;height:48px;margin:0 auto 1rem;background:#e44c65;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-weight:bold;">3</div>
-        <h3 style="font-size:1.1rem;font-weight:600;">مدیریت و پشتیبانی</h3>
-        <p style="color:#555;font-size:0.98rem;">پشتیبانی و مدیریت مستمر زیرساخت برای تضمین عملکرد بهینه.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="tech-stack" class="tech-stack">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">پشته فناوری و ابزارهای ما</h2>
-    <p style="text-align:center;color:#555;margin-bottom:1.5rem;">ما با استفاده از فناوری‌های Open Source و ابزارهای پیشرو در اکوسیستم CNCF، راهکارهای قدرتمندی ارائه می‌دهیم.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1.2rem;justify-items:center;">
-      <div style="display:flex;flex-direction:column;align-items:center;">
-  <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes" style="height:48px;margin-bottom:0.5rem;">
-        <span style="font-size:1rem;font-weight:600;">Kubernetes</span>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" style="height:48px;margin-bottom:0.5rem;">
-        <span style="font-size:1rem;font-weight:600;">Docker</span>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;">
-        <img src="https://argo-cd.readthedocs.io/en/stable/assets/logo.png" alt="ArgoCD" style="height:48px;margin-bottom:0.5rem;">
-        <span style="font-size:1rem;font-weight:600;">ArgoCD</span>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab CI" style="height:48px;margin-bottom:0.5rem;">
-        <span style="font-size:1rem;font-weight:600;">GitOps</span>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;">
-  <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/prometheus/icon/color/prometheus-icon-color.svg" alt="Prometheus" style="height:48px;margin-bottom:0.5rem;">
-        <span style="font-size:1rem;font-weight:600;">Monitoring</span>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;">
-  <img src="https://www.kernel.org/theme/images/logos/tux.png" alt="Linux" style="height:48px;margin-bottom:0.5rem;">
-        <span style="font-size:1rem;font-weight:600;">Linux</span>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:1.5rem;">مشارکت فعال در جامعه متن‌باز و پروژه‌های CNCF</p>
-  </section>
-
-  <section id="charts" class="charts">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">نمودارها و اینفوگرافیک‌ها</h2>
-    <div class="chart-container"><canvas id="marketChart"></canvas></div>
-    <div class="chart-container"><canvas id="valueChart"></canvas></div>
-  </section>
-
-  <section id="packages" class="packages">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">جدول مقایسه پکیج‌ها</h2>
-    <table style="width:100%;border-collapse:collapse;margin-top:1rem;">
-      <thead>
-        <tr>
-          <th>پکیج</th>
-          <th>مشاوره</th>
-          <th>پیاده‌سازی</th>
-          <th>SLA</th>
-          <th>مانیتورینگ</th>
-          <th>CI/CD</th>
-          <th>مدیر حساب</th>
-          <th>امنیت پیشرفته</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>پایه</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>⏺️</td>
-          <td>✔️</td>
-          <td>⏺️</td>
-          <td>⏺️</td>
-          <td>⏺️</td>
-        </tr>
-        <tr>
-          <td>استاندارد</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>⏺️</td>
-        </tr>
-        <tr>
-          <td>سازمانی اختصاصی</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section id="team" class="team">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">تیم و تخصص‌ها</h2>
-    <div style="display:flex;gap:2rem;justify-content:center;margin:1rem 0;flex-wrap:wrap;">
-      <div style="text-align:center;">
-  <img src="https://github.com/AliRezaTaleghani.png" alt="علیرضا طالقانی" height="64" style="border-radius:50%;margin-bottom:0.5rem;">
-        <p>علیرضا طالقانی<br><a href="https://github.com/AliRezaTaleghani" target="_blank">GitHub</a></p>
-      </div>
-      <div style="text-align:center;">
-  <img src="https://github.com/mojitaleghani.png" alt="مجتبی طالقانی" height="64" style="border-radius:50%;margin-bottom:0.5rem;">
-        <p>مجتبی طالقانی<br><a href="https://github.com/mojitaleghani" target="_blank">GitHub</a></p>
-      </div>
-      <div style="text-align:center;">
-  <img src="https://media.licdn.com/dms/image/v2/D4D03AQHovqrCZ9WX8w/profile-displayphoto-shrink_800_800/B4DZQdM3r4HYAc-/0/1735656711597?e=1758153600&v=beta&t=4s9uEQWdfHbzq1aifmixOUG8s3SSBVivj7YlnRZ_hDQ" alt="محمدرضا طالقانی" height="64" style="border-radius:50%;margin-bottom:0.5rem;">
-        <p>محمدرضا طالقانی<br><a href="https://www.linkedin.com/in/mohammad-reza-taleghani-b6684049/" target="_blank">LinkedIn</a></p>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:1rem;">عضویت در CNCF و مشارکت در جامعه متن‌باز</p>
-  </section>
-
-  <section id="business-model" style="margin:3rem 0;">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">مدل کسب‌وکار و استراتژی ورود به بازار</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;align-items:center;">
-      <div style="background:#fff;padding:1.2rem;border-radius:12px;box-shadow:0 2px 8px #e44c6555;">
-        <h4 style="text-align:center;color:#e44c65;font-size:1.2rem;font-weight:bold;margin-bottom:1rem;">نیازهای بخش‌های کلیدی بازار</h4>
-        <div class="chart-container"><canvas id="targetMarketChart"></canvas></div>
-      </div>
-      <div>
-        <div style="background:#fff;padding:1.2rem;border-radius:12px;box-shadow:0 2px 8px #e44c6555;margin-bottom:1rem;">
-          <h4 style="font-size:1.1rem;font-weight:bold;margin-bottom:0.7rem;">مشتریان هدف</h4>
-          <p style="color:#555;">سازمان‌های دولتی، بانک‌ها، شرکت‌های بزرگ با دیتاسنتر خصوصی و شرکت‌های نرم‌افزاری پیشرو.</p>
-        </div>
-        <div style="background:#fff;padding:1.2rem;border-radius:12px;box-shadow:0 2px 8px #e44c6555;margin-bottom:1rem;">
-          <h4 style="font-size:1.1rem;font-weight:bold;margin-bottom:0.7rem;">مدل‌های درآمدی</h4>
-          <p style="color:#555;">ترکیبی از مدل‌های پروژه‌ای، قراردادهای پشتیبانی (Retainer)، مشاوره ساعتی و آموزش تخصصی.</p>
-        </div>
-        <div style="background:#fff;padding:1.2rem;border-radius:12px;box-shadow:0 2px 8px #e44c6555;">
-          <h4 style="font-size:1.1rem;font-weight:bold;margin-bottom:0.7rem;">استراتژی بازاریابی</h4>
-          <p style="color:#555;">تمرکز بر فروش مستقیم B2B، بازاریابی محتوایی عمیق (مقالات و Case Studies) و شبکه‌سازی در رویدادهای تخصصی.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="swot" style="margin:3rem 0;">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">تحلیل SWOT</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
-      <div class="swot-box">
-        <h4 style="color:#20B2AA;">نقاط قوت (Strengths)</h4>
-        <ul style="color:#444;font-size:1rem;">
-          <li>✅ تخصص اثبات‌شده تیم در حوزه Open Source</li>
-          <li>✅ مدارک و دانش فنی به‌روز و مرتبط (CKA/CKAD/CKS)</li>
-          <li>✅ پشتیبانی و مستندات بومی و فارسی</li>
-          <li>✅ توانایی ارائه راه‌حل‌های کامل و جامع</li>
-        </ul>
-      </div>
-      <div class="swot-box">
-        <h4 style="color:#e44c65;">نقاط ضعف (Weaknesses)</h4>
-        <ul style="color:#444;font-size:1rem;">
-          <li>❌ بالا بودن هزینه‌های اولیه برای مشتریان</li>
-          <li>❌ عدم شناخت کافی بازار از مزایای خدمات ما</li>
-          <li>❌ نیاز به سرمایه‌گذاری اولیه در زیرساخت شخصی</li>
-          <li>❌ وابستگی به نیروی انسانی متخصص داخلی</li>
-        </ul>
-      </div>
-      <div class="swot-box">
-        <h4 style="color:#355c7d;">فرصت‌ها (Opportunities)</h4>
-        <ul style="color:#444;font-size:1rem;">
-          <li>📈 تقاضای رو به رشد برای راهکارهای بومی و امن</li>
-          <li>📈 غیاب رقبای خارجی و باز بودن فضای بازار</li>
-          <li>📈 نیاز سازمان‌های بزرگ به مدرن‌سازی با DevOps/GitOps</li>
-          <li>📈 الزام قانونی به نگهداری داده‌ها در داخل کشور</li>
-        </ul>
-      </div>
-      <div class="swot-box">
-        <h4 style="color:#f8b195;">تهدیدها (Threats)</h4>
-        <ul style="color:#444;font-size:1rem;">
-          <li>⚠️ ورود رقبای محلی جدید به بازار</li>
-          <li>⚠️ نوسانات اقتصادی و کاهش بودجه‌های IT</li>
-          <li>⚠️ عدم آگاهی مدیران از مزایای کوبرنیت</li>
-          <li>⚠️ پروژه‌های داخلی با کیفیت پایین که به اعتبار ما لطمه می‌زنند</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact" style="margin:3rem 0;">
-    <h2 style="text-align:center;font-size:2rem;font-weight:700;margin-bottom:2rem;">دعوت به همکاری و تماس</h2>
-    <form style="display:flex;flex-direction:column;gap:0.7rem;margin-bottom:1rem;max-width:400px;margin:auto;">
-      <input type="text" placeholder="نام شما" required>
-      <input type="email" placeholder="ایمیل" required>
-      <textarea placeholder="پیام شما" required></textarea>
-      <button type="submit" style="background:#e44c65;color:#fff;border:none;padding:0.7rem;border-radius:8px;font-size:1rem;cursor:pointer;">ارسال پیام</button>
-    </form>
-    <div class="contact-info" style="text-align:center;margin-bottom:1rem;">
-      <p>ایمیل: opscalesolution@gmail.com</p>
-      <p>وبسایت: https://opscale.ir</p>
-  <p>شبکه‌های اجتماعی: <a href="http://linkedin.com/company/opscale" target="_blank">LinkedIn</a> | <a href="https://opscalesolution.slack.com" target="_blank">Slack</a> | <a href="https://x.com/OpScaleSolution" target="_blank">X (Twitter)</a></p>
-    </div>
-    <a href="#contact" class="cta">درخواست جلسه مشاوره رایگان</a>
-  </section>
-
-  <footer class="footer" style="background:#e44c65;color:#fff;text-align:center;padding:1.2rem 0 0.7rem 0;margin-top:2rem;border-radius:0 0 12px 12px;">
-    <p>© 2025 اپ‌اسکیل سولوشنز | عضو CNCF | Kubernetes Certified</p>
-    <p>قالب HTML5 UP | رنگ سازمانی <span style="color:#fff">#e44c65</span> | فونت Vazirmatn | طراحی راست‌به‌چپ | ریسپانسیو</p>
-    <div class="footer-logos" style="margin-top:0.5rem;">
-      <img src="https://www.cncf.io/wp-content/uploads/2023/04/cncf-main-site-logo.svg" alt="CNCF" height="24">
-      <img src="https://github.com/cncf/artwork/raw/refs/heads/main/projects/kubernetes/horizontal/color/kubernetes-horizontal-color.png" alt="Kubernetes Certified" height="24">                        
-    </div>
-  </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // منوی چسبان فعال
-      const navLinks = document.querySelectorAll('.nav-link');
-      const sections = document.querySelectorAll('section[id]');
-      function activateNav() {
-        let scrollPos = window.scrollY || document.documentElement.scrollTop;
-        sections.forEach(section => {
-          if (section.offsetTop - 80 <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            let activeLink = document.querySelector('.nav-link[href="#'+section.id+'"]');
-            if(activeLink) activeLink.classList.add('active');
-          }
-        });
-      }
-      window.addEventListener('scroll', activateNav);
-      activateNav();
-
-      // نمودار شکاف بازار
-      new Chart(document.getElementById('marketGapChart').getContext('2d'), {
-        type: 'doughnut',
-        data: {
-          labels: ['متخصصان داخلی', 'رقبای خارجی (غایب)', 'نیاز بازار'],
-          datasets: [{
-            label: 'شکاف بازار',
-            data: [35, 45, 20],
-            backgroundColor: ['#20B2AA', '#FF6384', '#FFCE56'],
-            borderColor: '#F8F7F4',
-            borderWidth: 4
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {legend: {position: 'bottom'}}
-        }
-      });
-      // نمودار بازار هدف
-      new Chart(document.getElementById('marketChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-          labels: ['بانک‌ها', 'دولتی', 'شرکت‌های بزرگ', 'نرم‌افزاری', 'مخابراتی'],
-          datasets: [{
-            label: 'سهم بازار (%)',
-            data: [30, 20, 25, 15, 10],
-            backgroundColor: '#e44c65',
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {legend: {display: false}},
-          scales: {x: {grid: {display: false}}, y: {beginAtZero: true}}
-        }
-      });
-      // نمودار ارزش پیشنهادی
-      new Chart(document.getElementById('valueChart').getContext('2d'), {
-        type: 'pie',
-        data: {
-          labels: ['امنیت', 'چابکی', 'کاهش هزینه', 'اتوماسیون', 'استقلال'],
-          datasets: [{
-            data: [25, 20, 20, 20, 15],
-            backgroundColor: ['#e44c65', '#f8b195', '#355c7d', '#6c5b7b', '#c06c84'],
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {legend: {position: 'bottom'}}
-        }
-      });
-      // نمودار بازار هدف مدل کسب‌وکار
-      new Chart(document.getElementById('targetMarketChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-          labels: ['سازمان‌های دولتی', 'بانک‌ها', 'شرکت‌های بزرگ', 'شرکت‌های نرم‌افزاری'],
-          datasets: [{
-            label: 'نیاز به امنیت و کنترل',
-            data: [95, 98, 80, 70],
-            backgroundColor: '#20B2AA',
-          }, {
-            label: 'نیاز به چابکی (DevOps)',
-            data: [60, 75, 85, 95],
-            backgroundColor: '#FFCE56',
-          }]
-        },
-        options: {
-          responsive: true,
-          indexAxis: 'y',
-          scales: {x: {stacked: true}, y: {stacked: true}},
-          plugins: {legend: {position: 'top'}}
-        }
-      });
-    });
-  </script>
-</body>
-</html>
