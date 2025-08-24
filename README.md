@@ -2,12 +2,6 @@
 [![CNCF Member](https://img.shields.io/badge/CNCF-Member-blueviolet.svg)](https://www.cncf.io/)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Certified%20Experts-blue.svg)](https://www.cncf.io/certification/)
 
-## Promotional Video
-
-[🎬 Watch OpScale Solutions Promo (Muted)](./site/OpScaleAdv.mp4)
-
-> The video is provided without sound by default for a distraction-free preview.
-
 **OpScale Solutions | Cloud Native & Kubernetes Experts**
 
 OpScale Solutions specializes in designing, implementing, and supporting scalable cloud-native and on-premise infrastructures with a focus on Kubernetes, CNCF technologies, and open-source best practices.
