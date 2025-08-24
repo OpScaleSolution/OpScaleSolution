@@ -35,7 +35,7 @@ Active contributor to CNCF and open-source projects. Committed to knowledge shar
 
 ## Contact & Community
 
-- **Email:** [solutions@opscale.ir](mailto:opscalesolution@gmail.com)
+- **Email:** [ContactUs](mailto:opscalesolution@gmail.com)
 - **Website:** [opscale.ir](https://opscale.ir)
 - **LinkedIn:** [OpScale Solution](http://linkedin.com/company/opscale)
 - **Slack:** [OpScale Community](https://opscalesolution.slack.com)
