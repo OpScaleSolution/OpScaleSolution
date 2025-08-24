@@ -37,10 +37,10 @@
     <main class="container mx-auto px-6 py-12">
         <!-- Hero Section -->
                 <section id="home" class="text-center py-16">
-                        <div class="flex flex-col items-center justify-center mb-8">
-                            <video src="OpScaleAdv.mp4" autoplay muted loop playsinline class="w-full max-w-2xl rounded-xl shadow-lg mb-4"></video>
-                        </div>
                         <h1 class="text-4xl md:text-5xl font-bold mb-4">مدرن‌سازی زیرساخت IT با راهکارهای ابری بومی و Kubernetes</h1>
+                        <div class="flex flex-col items-center justify-center mb-8">
+                            <video src="OpScale.mp4" autoplay muted loop playsinline class="w-full max-w-2xl rounded-xl shadow-lg mb-4"></video>
+                        </div>
                         <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4">ارائه خدمات مدیریت‌شده کوبرنیتس On-Premise با تخصص بومی و فناوری‌های Open Source. تیم شما از دغدغه‌های زیرساختی رها شده و می‌تواند بر نوآوری و توسعه محصول تمرکز کند.</p>
                         <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.svg" alt="Kubernetes" class="mx-auto mb-4" style="height:90px;background:#fff;border-radius:50%;padding:10px;box-shadow:0 2px 8px #e44c6555;">
                         <a href="#contact" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition text-lg">دریافت مشاوره رایگان</a>
@@ -76,56 +76,6 @@
             </div>
         </section>
 
-        <!-- Tiers Section -->
-        <section id="tiers" class="py-16">
-            <h3 class="text-3xl font-bold mb-6 text-center">طرح متناسب با کسب‌وکار خود را انتخاب کنید</h3>
-            <p class="text-slate-500 text-center mb-8">راهکارهای ما بر اساس مقیاس و نیازهای منحصر به فرد شما طراحی شده‌اند.</p>
-            <div class="flex justify-center items-center gap-4 mb-10 flex-wrap">
-                <button id="btn-small" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600 active" onclick="selectTier('small')">شرکت کوچک</button>
-                <button id="btn-medium" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600" onclick="selectTier('medium')">شرکت متوسط</button>
-                <button id="btn-large" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600" onclick="selectTier('large')">شرکت بزرگ</button>
-            </div>
-            <div id="tier-content" class="bg-white p-8 rounded-xl shadow-lg transition-all duration-500">
-                <!-- Content will be injected by JavaScript -->
-            </div>
-            <script>
-            const tierData = {
-                small: {
-                    title: "سطح ۱: شرکت کوچک",
-                    goal: "ایجاد یک زیرساخت پایدار و قابل اتکا برای شروع قدرتمند، مبتنی بر Kubernetes.",
-                    hardware: `<div class=\"overflow-x-auto\"><table class=\"w-full rtl-table border-collapse\"><thead><tr class=\"bg-slate-100\"><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">نوع منبع</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">تعداد</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">مشخصات (هر واحد)</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">توضیحات</th></tr></thead><tbody><tr><td class=\"p-3 border border-slate-200\">Kubernetes Master</td><td class=\"p-3 border border-slate-200\">۱</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">مدیریت کلاستر و کنترل پنل.</td></tr><tr><td class=\"p-3 border border-slate-200\">Kubernetes Worker</td><td class=\"p-3 border border-slate-200\">۳</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">اجرای سرویس‌ها و اپلیکیشن‌ها.</td></tr><tr><td class=\"p-3 border border-slate-200\">VM (GitLab)</td><td class=\"p-3 border border-slate-200\">۱</td><td class=\"p-3 border border-slate-200\">۴ هسته CPU، ۸ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">GitLab خارج از کلاستر برای مدیریت کد.</td></tr><tr><td class=\"p-3 border border-slate-200\">فضای ذخیره‌سازی</td><td class=\"p-3 border border-slate-200\">۵۰۰ گیگابایت</td><td class=\"p-3 border border-slate-200\">-</td><td class=\"p-3 border border-slate-200\">فضای بلاک برای پایگاه‌های داده و اپلیکیشن‌ها.</td></tr></tbody></table></div>`,
-                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><ul class=\"list-disc list-inside space-y-1 text-slate-600\"><li><code>*.app.opscale.ir</code> برای انتشار سرویس‌های شما.</li><li><code>*.infra.opscale.ir</code> برای دسترسی امن به ابزارهای زیرساختی.</li></ul>`
-                },
-                medium: {
-                    title: "سطح ۲: شرکت متوسط",
-                    goal: "پیاده‌سازی یک زیرساخت پویا و با قابلیت رشد بالا، مبتنی بر Kubernetes.",
-                    hardware: `<div class=\"overflow-x-auto\"><table class=\"w-full rtl-table border-collapse\"><thead><tr class=\"bg-slate-100\"><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">نوع منبع</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">تعداد</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">مشخصات (هر واحد)</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">توضیحات</th></tr></thead><tbody><tr><td class=\"p-3 border border-slate-200\">Kubernetes Master</td><td class=\"p-3 border border-slate-200\">۳</td><td class=\"p-3 border border-slate-200\">۱۶ هسته CPU، ۳۲ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">High Availability برای مدیریت کلاستر.</td></tr><tr><td class=\"p-3 border border-slate-200\">Kubernetes Worker</td><td class=\"p-3 border border-slate-200\">۷</td><td class=\"p-3 border border-slate-200\">۱۶ هسته CPU، ۳۲ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">اجرای سرویس‌ها و اپلیکیشن‌ها با مقیاس‌پذیری بالا.</td></tr><tr><td class=\"p-3 border border-slate-200\">VM (GitLab)</td><td class=\"p-3 border border-slate-200\">۲</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">GitLab خارج از کلاستر با Redundancy.</td></tr><tr><td class=\"p-3 border border-slate-200\">فضای ذخیره‌سازی</td><td class=\"p-3 border border-slate-200\">۱ ترابایت</td><td class=\"p-3 border border-slate-200\">-</td><td class=\"p-3 border border-slate-200\">فضای بلاک با قابلیت افزایش خودکار.</td></tr></tbody></table></div>`,
-                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><ul class=\"list-disc list-inside space-y-1 text-slate-600\"><li><code>*.cloud.opscale.ir</code> برای انتشار سرویس‌ها.</li><li><code>*.infra.cloud.opscale.ir</code> برای ابزارهای زیرساخت.</li></ul>`
-                },
-                large: {
-                    title: "سطح ۳: شرکت بزرگ",
-                    goal: "طراحی یک راهکار سفارشی و جامع برای پروژه‌های در مقیاس بسیار بزرگ.",
-                    hardware: `<p class=\"text-slate-600 text-center p-8 bg-slate-100 rounded-lg\">در این سطح، نیازمند یک <strong>ارزیابی دقیق فنی (Technical Assessment)</strong> هستیم. ما با همکاری شما، یک معماری چندمنطقه‌ای (Multi-Region) با استفاده از منابع اختصاصی طراحی خواهیم کرد تا بالاترین سطح از کارایی، پایداری و امنیت را برای شما به ارمغان بیاوریم.</p>`,
-                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><p class=\"text-slate-600\">ساختار دامنه کاملاً سفارشی و بر اساس ساختار سازمانی و پروژه‌های شما طراحی می‌شود تا بهترین انطباق را با نیازهایتان داشته باشد.</p>`
-                }
-            };
-            const tierContentDiv = document.getElementById('tier-content');
-            const buttons = {
-                small: document.getElementById('btn-small'),
-                medium: document.getElementById('btn-medium'),
-                large: document.getElementById('btn-large')
-            };
-            function selectTier(tier) {
-                const data = tierData[tier];
-                tierContentDiv.innerHTML = `<h3 class=\"text-2xl font-bold mb-2\">${data.title}</h3><p class=\"text-slate-500 mb-6\">${data.goal}</p>${data.hardware}${data.domain}`;
-                Object.values(buttons).forEach(button => button.classList.remove('active'));
-                buttons[tier].classList.add('active');
-            }
-            window.onload = () => {
-                selectTier('small');
-            };
-            </script>
-        </section>
 
         <!-- Technology Stack Section -->
         <section id="tech" class="py-16">
@@ -133,7 +83,7 @@
                 <h3 class="text-3xl font-bold mb-2">فناوری‌های اصلی ما</h3>
                 <p class="text-slate-500">ما از ابزارهای مدرن و اثبات‌شده برای ساخت زیرساختی پایدار و کارآمد استفاده می‌کنیم.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 justify-items-center">
                 <div class="bg-white p-6 rounded-lg shadow text-center">
                     <div class="text-4xl mb-4">☸️</div>
                     <h4 class="text-xl font-bold mb-2">Kubernetes</h4>
@@ -153,6 +103,11 @@
                     <div class="text-4xl mb-4">🛡️</div>
                     <h4 class="text-xl font-bold mb-2">LetsEncrypt</h4>
                     <p class="text-slate-600">تولید و مدیریت خودکار گواهی‌های SSL برای رمزنگاری و امن‌سازی تمامی ارتباطات.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h4 class="text-xl font-bold mb-2">پروژه‌های متن‌باز CNCF</h4>
+                    <p class="text-slate-600">استفاده و مشارکت فعال در پروژه‌های کلیدی تحت حمایت <a href="https://www.cncf.io/projects/" target="_blank" class="text-blue-600 font-bold">CNCF</a></p>
                 </div>
             </div>
         </section>
@@ -209,6 +164,56 @@
         </section>
 
         <!-- Packages Comparison Section -->
+        <!-- Tiers Section (moved above packages) -->
+        <section id="tiers" class="py-16">
+            <h3 class="text-3xl font-bold mb-6 text-center">طرح متناسب با کسب‌وکار خود را انتخاب کنید</h3>
+            <p class="text-slate-500 text-center mb-8">راهکارهای ما بر اساس مقیاس و نیازهای منحصر به فرد شما طراحی شده‌اند.</p>
+            <div class="flex justify-center items-center gap-4 mb-10 flex-wrap">
+                <button id="btn-small" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600 active" onclick="selectTier('small')">شرکت کوچک</button>
+                <button id="btn-medium" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600" onclick="selectTier('medium')">شرکت متوسط</button>
+                <button id="btn-large" class="tier-button text-lg font-semibold py-3 px-8 border-2 border-slate-300 rounded-lg transition hover:border-blue-600" onclick="selectTier('large')">شرکت بزرگ</button>
+            </div>
+            <div id="tier-content" class="bg-white p-8 rounded-xl shadow-lg transition-all duration-500">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+            <script>
+            const tierData = {
+                small: {
+                    title: "سطح ۱: شرکت کوچک",
+                    goal: "ایجاد یک زیرساخت پایدار و قابل اتکا برای شروع قدرتمند، مبتنی بر Kubernetes.",
+                    hardware: `<div class=\"overflow-x-auto\"><table class=\"w-full rtl-table border-collapse\"><thead><tr class=\"bg-slate-100\"><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">نوع منبع</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">تعداد</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">مشخصات (هر واحد)</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">توضیحات</th></tr></thead><tbody><tr><td class=\"p-3 border border-slate-200\">Kubernetes Master</td><td class=\"p-3 border border-slate-200\">۱</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">مدیریت کلاستر و کنترل پنل.</td></tr><tr><td class=\"p-3 border border-slate-200\">Kubernetes Worker</td><td class=\"p-3 border border-slate-200\">۳</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">اجرای سرویس‌ها و اپلیکیشن‌ها.</td></tr><tr><td class=\"p-3 border border-slate-200\">VM (GitLab)</td><td class=\"p-3 border border-slate-200\">۱</td><td class=\"p-3 border border-slate-200\">۴ هسته CPU، ۸ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">GitLab خارج از کلاستر برای مدیریت کد.</td></tr><tr><td class=\"p-3 border border-slate-200\">فضای ذخیره‌سازی</td><td class=\"p-3 border border-slate-200\">۵۰۰ گیگابایت</td><td class=\"p-3 border border-slate-200\">-</td><td class=\"p-3 border border-slate-200\">فضای بلاک برای پایگاه‌های داده و اپلیکیشن‌ها.</td></tr></tbody></table></div>`,
+                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><ul class=\"list-disc list-inside space-y-1 text-slate-600\"><li><code>*.app.opscale.ir</code> برای انتشار سرویس‌های شما.</li><li><code>*.infra.opscale.ir</code> برای دسترسی امن به ابزارهای زیرساختی.</li></ul>`
+                },
+                medium: {
+                    title: "سطح ۲: شرکت متوسط",
+                    goal: "پیاده‌سازی یک زیرساخت پویا و با قابلیت رشد بالا، مبتنی بر Kubernetes.",
+                    hardware: `<div class=\"overflow-x-auto\"><table class=\"w-full rtl-table border-collapse\"><thead><tr class=\"bg-slate-100\"><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">نوع منبع</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">تعداد</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">مشخصات (هر واحد)</th><th class=\"p-3 font-bold uppercase text-slate-600 border border-slate-200\">توضیحات</th></tr></thead><tbody><tr><td class=\"p-3 border border-slate-200\">Kubernetes Master</td><td class=\"p-3 border border-slate-200\">۳</td><td class=\"p-3 border border-slate-200\">۱۶ هسته CPU، ۳۲ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">High Availability برای مدیریت کلاستر.</td></tr><tr><td class=\"p-3 border border-slate-200\">Kubernetes Worker</td><td class=\"p-3 border border-slate-200\">۷</td><td class=\"p-3 border border-slate-200\">۱۶ هسته CPU، ۳۲ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">اجرای سرویس‌ها و اپلیکیشن‌ها با مقیاس‌پذیری بالا.</td></tr><tr><td class=\"p-3 border border-slate-200\">VM (GitLab)</td><td class=\"p-3 border border-slate-200\">۲</td><td class=\"p-3 border border-slate-200\">۸ هسته CPU، ۱۶ گیگابایت RAM</td><td class=\"p-3 border border-slate-200\">GitLab خارج از کلاستر با Redundancy.</td></tr><tr><td class=\"p-3 border border-slate-200\">فضای ذخیره‌سازی</td><td class=\"p-3 border border-slate-200\">۱ ترابایت</td><td class=\"p-3 border border-slate-200\">-</td><td class=\"p-3 border border-slate-200\">فضای بلاک با قابلیت افزایش خودکار.</td></tr></tbody></table></div>`,
+                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><ul class=\"list-disc list-inside space-y-1 text-slate-600\"><li><code>*.cloud.opscale.ir</code> برای انتشار سرویس‌ها.</li><li><code>*.infra.cloud.opscale.ir</code> برای ابزارهای زیرساخت.</li></ul>`
+                },
+                large: {
+                    title: "سطح ۳: شرکت بزرگ",
+                    goal: "طراحی یک راهکار سفارشی و جامع برای پروژه‌های در مقیاس بسیار بزرگ.",
+                    hardware: `<p class=\"text-slate-600 text-center p-8 bg-slate-100 rounded-lg\">در این سطح، نیازمند یک <strong>ارزیابی دقیق فنی (Technical Assessment)</strong> هستیم. ما با همکاری شما، یک معماری چندمنطقه‌ای (Multi-Region) با استفاده از منابع اختصاصی طراحی خواهیم کرد تا بالاترین سطح از کارایی، پایداری و امنیت را برای شما به ارمغان بیاوریم.</p>`,
+                    domain: `<h4 class=\"text-lg font-bold mt-6 mb-2\">ساختار دامنه:</h4><p class=\"text-slate-600\">ساختار دامنه کاملاً سفارشی و بر اساس ساختار سازمانی و پروژه‌های شما طراحی می‌شود تا بهترین انطباق را با نیازهایتان داشته باشد.</p>`
+                }
+            };
+            const tierContentDiv = document.getElementById('tier-content');
+            const buttons = {
+                small: document.getElementById('btn-small'),
+                medium: document.getElementById('btn-medium'),
+                large: document.getElementById('btn-large')
+            };
+            function selectTier(tier) {
+                const data = tierData[tier];
+                tierContentDiv.innerHTML = `<h3 class=\"text-2xl font-bold mb-2\">${data.title}</h3><p class=\"text-slate-500 mb-6\">${data.goal}</p>${data.hardware}${data.domain}`;
+                Object.values(buttons).forEach(button => button.classList.remove('active'));
+                buttons[tier].classList.add('active');
+            }
+            window.onload = () => {
+                selectTier('small');
+            };
+            </script>
+        </section>
         <section id="packages" class="py-16">
             <h2 class="text-3xl font-bold mb-6 text-center">جدول مقایسه پکیج‌ها</h2>
             <div class="bg-white p-6 rounded-lg shadow text-center">
