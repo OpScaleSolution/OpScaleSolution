@@ -1,7 +1,12 @@
-
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![CNCF Member](https://img.shields.io/badge/CNCF-Member-blueviolet.svg)](https://www.cncf.io/)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Certified%20Experts-blue.svg)](https://www.cncf.io/certification/)
+
+## Promotional Video
+
+[🎬 Watch OpScale Solutions Promo (Muted)](./site/OpScaleAdv.mp4)
+
+> The video is provided without sound by default for a distraction-free preview.
 
 **OpScale Solutions | Cloud Native & Kubernetes Experts**
 
