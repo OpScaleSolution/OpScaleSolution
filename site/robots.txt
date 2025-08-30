@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://opscale.ir/sitemap.xml
