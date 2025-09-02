@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرفی خدمات Opscale | راهکارهای ابری و دواپس</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Tech Professional (Light Slate, Dark Slate Text, Sky Blue Accent) -->
+    <!-- Application Structure Plan: A single-page, top-down narrative structure was chosen to guide the user logically from introduction (About) to capabilities (Services), value proposition (Benefits), and social proof (Clients). This is more engaging than a static document. Key interactions include clickable service cards to reveal details and an interactive comparison chart for benefits, making complex information digestible and impactful. -->
+    <!-- Visualization & Content Choices: Services List -> Organize -> Interactive Cards -> Click to reveal details -> Organizes info, encourages exploration -> Vanilla JS. Key Benefits List -> Compare -> Bar Chart -> Compare "Traditional" vs "Opscale" metrics -> Visually compelling, quantifies value -> Chart.js. This structure avoids text walls and uses visuals to reinforce the core message. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 500px;
+            }
+        }
+        .service-card.active {
+            border-color: #0284c7;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .service-card.active .service-icon {
+            background-color: #0284c7;
+            color: white;
+        }
+        .nav-link.active {
+            color: #0284c7;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-sky-700">Opscale</h1>
+            <ul class="hidden md:flex space-x-8 space-x-reverse text-lg">
+                <li><a href="#about" class="nav-link text-slate-600 hover:text-sky-600 transition-colors">درباره ما</a></li>
+                <li><a href="#services" class="nav-link text-slate-600 hover:text-sky-600 transition-colors">خدمات</a></li>
+                <li><a href="#benefits" class="nav-link text-slate-600 hover:text-sky-600 transition-colors">مزایا</a></li>
+                <li><a href="#clients" class="nav-link text-slate-600 hover:text-sky-600 transition-colors">مشتریان</a></li>
+            </ul>
+            <a href="#contact" class="bg-sky-600 text-white px-6 py-2 rounded-lg hover:bg-sky-700 transition-colors hidden md:block">تماس با ما</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="bg-white">
+            <div class="container mx-auto px-6 py-24 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">راهکارهای مدرن زیرساخت ابری و دواپس</h2>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">ما با مدیریت پیچیدگی‌های زیرساخت، به تیم شما کمک می‌کنیم تا بر نوآوری و توسعه محصول متمرکز شود.</p>
+                <a href="#services" class="mt-8 inline-block bg-sky-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-sky-700 transition-transform hover:scale-105">کاوش در خدمات ما</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4">درباره Opscale</h3>
+                    <p class="text-lg text-slate-500 max-w-3xl mx-auto">متخصص در توانمندسازی کسب‌وکارها</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                    <p class="text-lg leading-relaxed text-slate-700">
+                        شرکت Opscale ارائه‌دهنده راهکارهای جامع و مدیریت‌شده در زمینه زیرساخت ابری و پیاده‌سازی فرهنگ دواپس است. مأموریت ما توانمندسازی تیم‌های توسعه نرم‌افزار برای تمرکز بر نوآوری و خلق محصول است، در حالی که ما مسئولیت پیچیدگی‌های زیرساختی، پایداری و مقیاس‌پذیری سیستم‌های شما را بر عهده می‌گیریم. با تکیه بر دانش بومی و فناوری‌های متن‌باز، زیرساختی مدرن، امن و قابل‌اطمینان برای کسب‌وکار شما فراهم می‌کنیم.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4">خدمات اصلی ما</h3>
+                    <p class="text-lg text-slate-500 max-w-3xl mx-auto">برای مشاهده جزئیات بیشتر، روی هر سرویس کلیک کنید.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm border-2 border-transparent cursor-pointer transition-all duration-300" data-service="infra">
+                        <div class="flex items-center mb-4">
+                            <div class="service-icon w-12 h-12 flex items-center justify-center rounded-full bg-sky-100 text-sky-600 mr-4 text-2xl transition-colors">☁️</div>
+                            <h4 class="text-xl font-bold">زیرساخت ابری</h4>
+                        </div>
+                        <p class="text-slate-600">طراحی و پیاده‌سازی زیرساخت‌های Cloud-Native و مدیریت‌شده کوبرنتیز.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm border-2 border-transparent cursor-pointer transition-all duration-300" data-service="cicd">
+                        <div class="flex items-center mb-4">
+                            <div class="service-icon w-12 h-12 flex items-center justify-center rounded-full bg-sky-100 text-sky-600 mr-4 text-2xl transition-colors">🚀</div>
+                            <h4 class="text-xl font-bold">اتوماسیون CI/CD</h4>
+                        </div>
+                        <p class="text-slate-600">خودکارسازی کامل چرخه تولید و استقرار نرم‌افزار برای افزایش سرعت.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm border-2 border-transparent cursor-pointer transition-all duration-300" data-service="monitoring">
+                        <div class="flex items-center mb-4">
+                            <div class="service-icon w-12 h-12 flex items-center justify-center rounded-full bg-sky-100 text-sky-600 mr-4 text-2xl transition-colors">📊</div>
+                            <h4 class="text-xl font-bold">مانیتورینگ و پایش</h4>
+                        </div>
+                        <p class="text-slate-600">پیاده‌سازی سیستم‌های پیشرفته مانیتورینگ و مدیریت متمرکز لاگ‌ها.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm border-2 border-transparent cursor-pointer transition-all duration-300" data-service="consulting">
+                        <div class="flex items-center mb-4">
+                            <div class="service-icon w-12 h-12 flex items-center justify-center rounded-full bg-sky-100 text-sky-600 mr-4 text-2xl transition-colors">💡</div>
+                            <h4 class="text-xl font-bold">مشاوره استراتژیک</h4>
+                        </div>
+                        <p class="text-slate-600">ارائه نقشه راه برای حرکت به سمت معماری‌های مدرن و بهینه.</p>
+                    </div>
+                    <div class="service-card bg-white p-6 rounded-xl shadow-sm border-2 border-transparent cursor-pointer transition-all duration-300" data-service="security">
+                        <div class="flex items-center mb-4">
+                            <div class="service-icon w-12 h-12 flex items-center justify-center rounded-full bg-sky-100 text-sky-600 mr-4 text-2xl transition-colors">🛡️</div>
+                            <h4 class="text-xl font-bold">امنیت زیرساخت</h4>
+                        </div>
+                        <p class="text-slate-600">امن‌سازی سرویس‌ها و ارتباطات با پیاده‌سازی بهترین شیوه‌ها.</p>
+                    </div>
+                </div>
+                <div id="service-details" class="bg-white p-8 rounded-xl shadow-md min-h-[200px] transition-opacity duration-500">
+                    <div class="service-content" id="infra-content">
+                        <h4 class="text-2xl font-bold mb-4">طراحی و پیاده‌سازی زیرساخت ابری (On-Premise & Cloud)</h4>
+                        <ul class="list-disc list-inside space-y-2 text-slate-700 text-lg">
+                            <li>ارائه راهکار مدیریت‌شده کوبرنتیز (Managed Kubernetes) به‌صورت اختصاصی و داخلی (On-Premise) جهت رفع چالش‌های تحریم و افزایش امنیت داده‌ها.</li>
+                            <li>طراحی معماری زیرساخت مبتنی بر فناوری‌های Cloud-Native برای دستیابی به بالاترین سطح از پایداری و مقیاس‌پذیری.</li>
+                        </ul>
+                    </div>
+                    <div class="service-content hidden" id="cicd-content">
+                        <h4 class="text-2xl font-bold mb-4">اتوماسیون کامل چرخه تولید و استقرار نرم‌افزار (CI/CD)</h4>
+                        <ul class="list-disc list-inside space-y-2 text-slate-700 text-lg">
+                            <li>راه‌اندازی پایپ‌لاین‌های CI/CD با استفاده از ابزارهایی مانند GitLab.</li>
+                            <li>خودکارسازی فرآیندهای تست، یکپارچه‌سازی و استقرار کد برای افزایش سرعت تحویل محصول و کاهش خطاهای انسانی.</li>
+                        </ul>
+                    </div>
+                    <div class="service-content hidden" id="monitoring-content">
+                        <h4 class="text-2xl font-bold mb-4">مانیتورینگ، مدیریت لاگ و پایش‌پذیری (Observability)</h4>
+                        <ul class="list-disc list-inside space-y-2 text-slate-700 text-lg">
+                            <li>پیاده‌سازی سیستم‌های پیشرفته مانیتورینگ و جمع‌آوری متریک‌ها با ابزارهایی نظیر Prometheus.</li>
+                            <li>مدیریت متمرکز لاگ‌ها با استفاده از Loki جهت عیب‌یابی سریع و تحلیل عملکرد سیستم.</li>
+                        </ul>
+                    </div>
+                    <div class="service-content hidden" id="consulting-content">
+                        <h4 class="text-2xl font-bold mb-4">مشاوره استراتژیک دواپس و زیرساخت</h4>
+                        <ul class="list-disc list-inside space-y-2 text-slate-700 text-lg">
+                            <li>تحلیل وضعیت موجود و ارائه نقشه راه برای حرکت به سمت معماری‌های مدرن.</li>
+                            <li>ارائه خدمات مشاوره در زمینه‌های امنیت، بهینه‌سازی هزینه‌ها و افزایش بهره‌وری تیم‌های فنی.</li>
+                        </ul>
+                    </div>
+                    <div class="service-content hidden" id="security-content">
+                        <h4 class="text-2xl font-bold mb-4">امنیت زیرساخت و ارتباطات</h4>
+                        <ul class="list-disc list-inside space-y-2 text-slate-700 text-lg">
+                            <li>امن‌سازی سرویس‌ها و ارتباطات داخلی و خارجی با استفاده از راهکارهایی مانند LetsEncrypt.</li>
+                            <li>پیاده‌سازی بهترین شیوه‌ها (Best Practices) برای امن‌سازی کانتینرها و کلاسترهای کوبرنتیز.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4">مزایای همکاری با Opscale</h3>
+                    <p class="text-lg text-slate-500 max-w-3xl mx-auto">ما با ارائه راهکارهای خود، ارزش ملموسی برای کسب‌وکار شما ایجاد می‌کنیم. نمودار زیر مقایسه شاخص‌های کلیدی عملکرد بین رویکرد سنتی و رویکرد مدرن دواپس ارائه شده توسط ما را نشان می‌دهد.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="chart-container">
+                        <canvas id="benefitsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="clients" class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4">مشتریان هدف</h3>
+                    <p class="text-lg text-slate-500 max-w-3xl mx-auto">ما افتخار همکاری با طیف گسترده‌ای از سازمان‌های پیشرو را داریم.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <div class="text-4xl mb-4">🏢</div>
+                        <h4 class="text-xl font-semibold">سازمان‌های دولتی</h4>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <div class="text-4xl mb-4">🏦</div>
+                        <h4 class="text-xl font-semibold">بانک‌ها</h4>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <div class="text-4xl mb-4">💳</div>
+                        <h4 class="text-xl font-semibold">مؤسسات مالی</h4>
+                    </div>
+                     <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <div class="text-4xl mb-4">💻</div>
+                        <h4 class="text-xl font-semibold">شرکت‌های نرم‌افزاری</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="bg-slate-800 text-white py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl font-bold mb-4">آماده شروع هستید؟</h3>
+                <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">برای دریافت مشاوره تخصصی و شروع همکاری با ما در ارتباط باشید.</p>
+                <a href="mailto:OpScaleSolution@gmail.com" class="bg-sky-600 text-white px-10 py-4 rounded-lg text-lg font-semibold hover:bg-sky-500 transition-colors">ارسال ایمیل</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const serviceCards = document.querySelectorAll('.service-card');
+            const serviceContents = document.querySelectorAll('.service-content');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            function updateActiveService(activeCard) {
+                const serviceId = activeCard.dataset.service;
+                
+                serviceCards.forEach(card => {
+                    card.classList.remove('active');
+                });
+                activeCard.classList.add('active');
+
+                serviceContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(`${serviceId}-content`).classList.remove('hidden');
+            }
+
+            serviceCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    updateActiveService(card);
+                });
+            });
+
+            updateActiveService(document.querySelector('.service-card[data-service="infra"]'));
+            
+            const benefitsChartCtx = document.getElementById('benefitsChart').getContext('2d');
+            Chart.defaults.font.family = 'Vazirmatn';
+            Chart.defaults.font.size = 14;
+            
+            const benefitsChart = new Chart(benefitsChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['پایداری سرویس', 'سرعت تحویل محصول', 'مقیاس‌پذیری', 'تمرکز تیم بر نوآوری', 'هزینه خطای انسانی'],
+                    datasets: [{
+                        label: 'رویکرد سنتی',
+                        data: [6, 3, 4, 3, 8],
+                        backgroundColor: 'rgba(100, 116, 139, 0.6)',
+                        borderColor: 'rgba(100, 116, 139, 1)',
+                        borderWidth: 1,
+                        borderRadius: 5
+                    }, {
+                        label: 'با راهکار Opscale',
+                        data: [9.5, 9, 9, 8.5, 2],
+                        backgroundColor: 'rgba(2, 132, 199, 0.7)',
+                        borderColor: 'rgba(2, 132, 199, 1)',
+                        borderWidth: 1,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 10,
+                             grid: {
+                                color: '#e2e8f0'
+                             }
+                        },
+                        y: {
+                             grid: {
+                                display: false
+                             }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: {
+                                    size: 16,
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            rtl: true,
+                            bodyFont: {
+                                family: 'Vazirmatn'
+                            },
+                            titleFont: {
+                                family: 'Vazirmatn'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
